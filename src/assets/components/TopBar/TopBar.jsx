@@ -8,15 +8,36 @@ const TopBar = () => {
     setAddItemVIsibility(prev => !prev)
   }
 
-  const addItem = (event) => {
+  const addItem = async (event) => {
     event.preventDefault()
-  } 
+
+    const form = new FormData(event.target)
+    console.log(form)
+
+    try {
+      // const response = await 
+      fetch(`${import.meta.env.VITE_API_LINK}/test`, {
+        method: "POST",
+        // headers: {
+        //   authorization
+        // },
+        body: form
+      })
+      // const result = await response.json()
+      // console.log(result)
+
+      event.target.reset()
+      // setRefresh(prev => !prev)
+    } catch (error) {
+      console.error(error.message)
+    }
+  }
 
   return (
     <section className={styles.topbar}>
       <div>
         <div>
-          <input type="text" name="search" id="search" placeholder='Suche' />
+          <input type="text" name="search" id="search" placeholder="Suche" />
         </div>
         <div>
           <button onClick={toggleAddItemVisibility}>+</button>
@@ -34,12 +55,12 @@ const TopBar = () => {
             <option value="drogerie">Drogerie</option>
             <option value="seeInfo">Siehe Info</option>
           </select>
-          <input type="text" name="name" id="name" placeholder='Name' />
-          <input type="text" name="menge" id="menge" placeholder='Menge' />
-          <input type="text" name="info" id="info" placeholder='Info'/>
+          <input type="text" name="name" id="name" placeholder="Name" />
+          <input type="text" name="menge" id="menge" placeholder="Menge" />
+          <input type="text" name="info" id="info" placeholder="Info" />
           <select name="status" id="status">
-          <option value="active">Aktiv</option>
-          <option value="inactive">Inaktiv</option>
+            <option value="active">Aktiv</option>
+            <option value="inactive">Inaktiv</option>
           </select>
           <button type="submit">Add</button>
         </form>
