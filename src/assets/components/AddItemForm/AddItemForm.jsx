@@ -1,49 +1,48 @@
-import { useState } from 'react';
-import styles from './TopBar.module.scss'
+import { useContext, useState } from 'react';
+import { RefreshContext } from '../../../App';
+import styles from './AddItemForm.module.scss'
 
-const TopBar = () => {
-  const [addItemVisibility, setAddItemVIsibility] = useState(false)
+const AddItemForm = () => {
+  const [addItemFormVisibility, setAddItemFormVisibility] = useState(false)
 
-  const toggleAddItemVisibility = () => {
-    setAddItemVIsibility(prev => !prev)
+  const { refresh, setRefresh } = useContext(RefreshContext)
+
+  const toggleAddItemFormVisibility = () => {
+    setAddItemFormVisibility(prev => !prev)
   }
 
   const addItem = async (event) => {
     event.preventDefault()
 
     const form = new FormData(event.target)
-    console.log(form)
+    // form.added = new Date()
+    // console.log(form)
 
     try {
-      // const response = await 
-      fetch(`${import.meta.env.VITE_API_LINK}/test`, {
+      const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
         method: "POST",
         // headers: {
         //   authorization
         // },
         body: form
       })
-      // const result = await response.json()
-      // console.log(result)
 
-      event.target.reset()
-      // setRefresh(prev => !prev)
+      if (response.ok) {
+        event.target.reset()
+        toggleAddItemFormVisibility()
+        setRefresh(prev => !prev)
+      }
     } catch (error) {
       console.error(error.message)
     }
   }
 
   return (
-    <section className={styles.topbar}>
+    <section className={styles.additem_form}>
       <div>
-        <div>
-          <input type="text" name="search" id="search" placeholder="Suche" />
-        </div>
-        <div>
-          <button onClick={toggleAddItemVisibility}>+</button>
-        </div>
+        <button onClick={toggleAddItemFormVisibility}>+</button>
       </div>
-      {addItemVisibility &&
+      {addItemFormVisibility &&
         <form onSubmit={addItem}>
           <select name="typ" id="typ">
             <option value="einkauf">Einkauf</option>
@@ -69,4 +68,4 @@ const TopBar = () => {
   );
 }
 
-export default TopBar;
+export default AddItemForm;
