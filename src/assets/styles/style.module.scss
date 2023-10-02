@@ -1,0 +1,23 @@
+// ==================================
+//           IMPORT
+// ==================================
+@use "./generals.module.scss";
+@use "./mixins.module.scss";
+@use "./resets.module.scss";
+@use "./variables.module.scss" as var;
+
+// ==================================
+//           APP STYLES
+// ==================================
+
+// #root {
+//   max-width: var.$root_width_desktop;
+//   margin: 0 auto;
+//   padding: 4rem 0;
+// }
+
+// @media screen and (max-width: var.$breakpoint_xxs) {
+//   #root {
+//     padding-bottom: 0;
+//   }
+// }

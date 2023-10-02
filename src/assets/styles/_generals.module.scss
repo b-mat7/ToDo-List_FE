@@ -1,0 +1,21 @@
+// ==================================
+//           IMPORT
+// ==================================
+@use "./mixins.module.scss";
+@use "./variables.module.scss" as var;
+
+// ==================================
+//           GENERAL STYLES
+// ==================================
+// :root {
+//   font-family: var.$font-family_primary;
+//   color: var.$color_primary;
+
+//   font-synthesis: none;
+//   text-rendering: optimizeLegibility;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   -webkit-text-size-adjust: 100%;
+
+//   background-color: var.$color_root_background;
+// }

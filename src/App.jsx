@@ -1,14 +1,13 @@
 import { useState } from 'react'
+import NavBar from './assets/components/NavBar/NavBar'
 
-// import './App.css'
+import './App.scss'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <main>
-
-    </main>
+      <NavBar />
   )
 }
 
