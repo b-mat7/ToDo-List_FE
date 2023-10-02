@@ -1,13 +1,21 @@
 import { useState } from 'react'
-import NavBar from './assets/components/NavBar/NavBar'
+
+import TopBar from './assets/components/TopBar/TopBar'
+import FilterBar from './assets/components/FilterBar/FilterBar'
+import TodosContainer from './assets/components/TodosContainer/TodosContainer'
 
 import './App.scss'
+
 
 function App() {
 
 
   return (
-      <NavBar />
+    <>
+      <TopBar />
+      <FilterBar />
+      <TodosContainer/>
+    </>
   )
 }
 
