@@ -63,8 +63,8 @@ const AddItemForm = () => {
           </select>
           <input type="date" id="faellig" name="faellig" />
           <select name="status" id="status">
-            <option value="active">Aktiv</option>
-            <option value="inactive">Inaktiv</option>
+            <option value="aktiv">Aktiv</option>
+            <option value="inaktiv">Inaktiv</option>
           </select>
           <button type="submit">Add</button>
         </form>

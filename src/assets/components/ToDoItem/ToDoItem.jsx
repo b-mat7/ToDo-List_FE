@@ -1,7 +1,5 @@
 import { useContext } from 'react'
-
 import { RefreshContext } from '../../../App'
-
 import styles from './ToDoItem.module.scss'
 
 const ToDoItem = ({ item }) => {
@@ -9,7 +7,6 @@ const ToDoItem = ({ item }) => {
   const { refresh, setRefresh } = useContext(RefreshContext)
 
   const deleteItem = async () => {
-
     try {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
         method: "DELETE",
