@@ -15,8 +15,7 @@ const AddItemForm = () => {
     event.preventDefault()
 
     const form = new FormData(event.target)
-    // form.added = new Date()
-    // console.log(form)
+    form.append("bearbeitet", new Date().toISOString());
 
     try {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
@@ -54,9 +53,15 @@ const AddItemForm = () => {
             <option value="drogerie">Drogerie</option>
             <option value="seeInfo">Siehe Info</option>
           </select>
-          <input type="text" name="name" id="name" placeholder="Name" />
+          <input type="text" name="name" id="name" placeholder="Name" required />
           <input type="text" name="menge" id="menge" placeholder="Menge" />
           <input type="text" name="info" id="info" placeholder="Info" />
+          <select name="wer" id="wer">
+            <option value=""></option>
+            <option value="Kersi">Kersi</option>
+            <option value="Matze">Matze</option>
+          </select>
+          <input type="date" id="faellig" name="faellig" />
           <select name="status" id="status">
             <option value="active">Aktiv</option>
             <option value="inactive">Inaktiv</option>

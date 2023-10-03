@@ -33,9 +33,15 @@ const ToDoItem = ({ item }) => {
       <div>
         <p>{item.name}</p>
         <p>{item.menge}</p>
+
         <p>{item.typ}</p>
         <p>{item.ort}</p>
+
+        <p>{item.wer}</p>
+        <p>{item.faellig}</p>
+
         <p>{item.info}</p>
+
         <button onClick={deleteItem}>X</button>
       </div>
 
