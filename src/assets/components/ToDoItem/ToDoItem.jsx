@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useRef, useState } from 'react'
 import { RefreshContext } from '../../../App'
 import styles from './ToDoItem.module.scss'
 
@@ -9,6 +9,13 @@ const ToDoItem = ({ item }) => {
 
   const { refresh, setRefresh } = useContext(RefreshContext)
 
+  const nameRef = useRef()
+  const qtyRef = useRef()
+  const noteRef = useRef()
+  const typeRef = useRef()
+  const sourceRef = useRef()
+  const ownerRef = useRef()
+  const dueRef = useRef()
 
   const toggleEditMode = () => setEditMode(prev => !prev)
 
@@ -24,17 +31,27 @@ const ToDoItem = ({ item }) => {
   const editItem = async (event) => {
     event.preventDefault()
 
-    const form = new FormData(event.target)
-    form.append("bearbeitet", new Date().toISOString())
-    form.append("_id", item._id)
+    const formData = {
+      _id: item._id,
+      name: nameRef.current.value,
+      qty: qtyRef.current.value,
+      note: noteRef.current.value,
+      type: typeRef.current.value,
+      source: sourceRef.current.value,
+      owner: ownerRef.current.value,
+      due: dueRef.current.value,
+      // active: item.active,
+      edited: new Date().toISOString()
+    }
 
     try {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
         method: "PUT",
-        // headers: {
-        //   authorization
-        // },
-        body: form
+        headers: {
+          //   authorization,
+          "content-type": "application/json"
+        },
+        body: JSON.stringify(formData)
       })
 
       if (response.ok) {
@@ -46,12 +63,32 @@ const ToDoItem = ({ item }) => {
     }
   }
 
+  const editActive = async () => {
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
+        method: "PATCH",
+        headers: {
+          // authorization,
+          "content-type": "application/json"
+        },
+        body: JSON.stringify({ _id: item._id, active: !item.active, edited: new Date().toISOString() })
+      })
+
+      if (response.ok) {
+        setRefresh(prev => !prev)
+      }
+    } catch (error) {
+      console.error(error.message)
+    }
+  }
+
+
   const deleteItem = async () => {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
         method: "DELETE",
         headers: {
-          // authorization
+          // authorization,
           "content-type": "application/json"
         },
         body: JSON.stringify({ _id: item._id })
@@ -72,49 +109,48 @@ const ToDoItem = ({ item }) => {
 
         <form onSubmit={editItem}>
           <button type="submit">Save</button>
-          <input type="text" name="name" id="name" value={editedItem.name} onChange={handleInputChange} required />
-          <input type="text" name="menge" id="menge" placeholder="Menge" value={editedItem.menge} onChange={handleInputChange} />
-          <input type="text" name="info" id="info" placeholder="Info" value={editedItem.info} onChange={handleInputChange} />
-          <select name="typ" id="typ" value={editedItem.typ} onChange={handleInputChange}>
+          <input ref={nameRef} type="text" name="name" id="name" value={editedItem.name} onChange={handleInputChange} required />
+          <input ref={qtyRef} type="text" name="qty" id="qty" placeholder="Menge" value={editedItem.qty} onChange={handleInputChange} />
+          <input ref={noteRef} type="text" name="note" id="note" placeholder="Info" value={editedItem.note} onChange={handleInputChange} />
+          <select ref={typeRef} name="type" id="type" value={editedItem.type} onChange={handleInputChange}>
             <option value="einkauf">Einkauf</option>
             <option value="todo">ToDo</option>
           </select>
-          <select name="ort" id="ort" value={editedItem.ort} onChange={handleInputChange}>
+          <select ref={sourceRef} name="source" id="source" value={editedItem.source} onChange={handleInputChange}>
             <option value="supermarkt">Supermarkt</option>
             <option value="apotheke">Apotheke</option>
             <option value="drogerie">Drogerie</option>
-            <option value="seeInfo">Siehe Info</option>
+            <option value="sieheInfo">Siehe Info</option>
           </select>
-          <select name="wer" id="wer" value={editedItem.wer} onChange={handleInputChange}>
+          <select ref={ownerRef} name="owner" id="owner" value={editedItem.owner} onChange={handleInputChange}>
             <option value=""></option>
             <option value="kersi">Kersi</option>
             <option value="matze">Matze</option>
           </select>
-          <input type="date" id="faellig" name="faellig" value={editedItem.faellig} onChange={handleInputChange} />
-          <select name="status" id="status" value={editedItem.status} onChange={handleInputChange}>
-            <option value="aktiv">Aktiv</option>
-            <option value="inaktiv">Inaktiv</option>
-          </select>
+          <input ref={dueRef} type="date" id="due" name="due" value={editedItem.due} onChange={handleInputChange} />
         </form>
 
         :
 
         <div>
-          {item.status === "aktiv" &&
+          {item.active === true &&
             <button onClick={toggleEditMode}>Edit</button>
           }
-          <p>{item.name}</p>
-          <p>{item.menge}</p>
 
-          <p>{item.typ}</p>
-          <p>{item.ort}</p>
+          <div onClick={editActive}>
+            <p>{item.name}</p>
+            <p>{item.qty}</p>
 
-          <p>{item.wer}</p>
-          <p>{item.faellig}</p>
+            <p>{item.type}</p>
+            <p>{item.source}</p>
 
-          <p>{item.info}</p>
+            <p>{item.owner}</p>
+            <p>{item.due}</p>
 
-          {item.status === "inaktiv" &&
+            <p>{item.note}</p>
+          </div>
+
+          {item.active === false &&
             <button onClick={deleteItem}>X</button>
           }
         </div>

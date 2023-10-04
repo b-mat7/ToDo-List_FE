@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { ToDosContext } from '../../../App';
 import ToDoItem from '../ToDoItem/ToDoItem';
 
@@ -8,14 +8,14 @@ const ToDosContainer = () => {
 
   const { toDos, setToDos } = useContext(ToDosContext)
 
-  const activeToDos = toDos.filter(item => item.status === 'aktiv')
-  const inactiveToDos = toDos.filter(item => item.status === 'inaktiv')
+  const activeToDos = toDos.filter(item => item.active === true)
+  const inactiveToDos = toDos.filter(item => item.active === false)
 
   // Search + Filter effect hier -> evtl <FilterBar/> reinholen..?
 
   return (
     <section className={styles.toDos_container}>
-      <div>Active</div>
+      <div>Aktiv</div>
       {activeToDos.map((item, key) => (
         <ToDoItem
           key={key}

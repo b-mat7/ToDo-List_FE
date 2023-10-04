@@ -1,34 +1,56 @@
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { RefreshContext } from '../../../App';
 import styles from './AddItemForm.module.scss'
 
 const AddItemForm = () => {
-  const [addItemFormVisibility, setAddItemFormVisibility] = useState(false)
+  const [formVisibility, setFormVisibility] = useState(false)
 
   const { refresh, setRefresh } = useContext(RefreshContext)
 
-  const toggleAddItemFormVisibility = () => {
-    setAddItemFormVisibility(prev => !prev)
-  }
+  const nameRef = useRef()
+  const qtyRef = useRef()
+  const noteRef = useRef()
+  const typeRef = useRef()
+  const sourceRef = useRef()
+  const ownerRef = useRef()
+  const dueRef = useRef()
+
+  const toggleFormVisibility = () => setFormVisibility(prev => !prev)
 
   const addItem = async (event) => {
     event.preventDefault()
 
-    const form = new FormData(event.target)
-    form.append("bearbeitet", new Date().toISOString());
+    const formData = {
+      name: nameRef.current.value,
+      qty: qtyRef.current.value,
+      note: noteRef.current.value,
+      type: typeRef.current.value,
+      source: sourceRef.current.value,
+      owner: ownerRef.current.value,
+      due: dueRef.current.value,
+      active: true,
+      edited: new Date().toISOString()
+    }
 
     try {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
         method: "POST",
-        // headers: {
-        //   authorization
-        // },
-        body: form
+        headers: {
+          // authorization,
+          "content-type": "application/json"
+        },
+        body: JSON.stringify(formData)
       })
 
       if (response.ok) {
-        event.target.reset()
-        toggleAddItemFormVisibility()
+        nameRef.current.value = ""
+        qtyRef.current.value = ""
+        noteRef.current.value = ""
+        typeRef.current.value = "einkauf"
+        sourceRef.current.value = "supermarkt"
+        ownerRef.current.value = ""
+        dueRef.current.value = ""
+        toggleFormVisibility()
         setRefresh(prev => !prev)
       }
     } catch (error) {
@@ -39,33 +61,29 @@ const AddItemForm = () => {
   return (
     <section className={styles.additem_form}>
       <div>
-        <button onClick={toggleAddItemFormVisibility}>+</button>
+        <button onClick={toggleFormVisibility}>+++</button>
       </div>
-      {addItemFormVisibility &&
+      {formVisibility &&
         <form onSubmit={addItem}>
-          <input type="text" name="name" id="name" placeholder="Name" required />
-          <input type="text" name="menge" id="menge" placeholder="Menge" />
-          <input type="text" name="info" id="info" placeholder="Info" />
-          <select name="typ" id="typ">
+          <input ref={nameRef} type="text" name="name" id="name" placeholder="Name" required />
+          <input ref={qtyRef} type="text" name="qty" id="qty" placeholder="Menge" />
+          <input ref={noteRef} type="text" name="note" id="note" placeholder="Info" />
+          <select ref={typeRef} name="type" id="type">
             <option value="einkauf">Einkauf</option>
             <option value="todo">ToDo</option>
           </select>
-          <select name="ort" id="ort">
+          <select ref={sourceRef} name="source" id="source">
             <option value="supermarkt">Supermarkt</option>
             <option value="apotheke">Apotheke</option>
             <option value="drogerie">Drogerie</option>
-            <option value="seeInfo">Siehe Info</option>
+            <option value="sieheInfo">Siehe Info</option>
           </select>
-          <select name="wer" id="wer">
+          <select ref={ownerRef} name="owner" id="owner">
             <option value=""></option>
             <option value="kersi">Kersi</option>
             <option value="matze">Matze</option>
           </select>
-          <input type="date" id="faellig" name="faellig" />
-          <select name="status" id="status">
-            <option value="aktiv">Aktiv</option>
-            <option value="inaktiv">Inaktiv</option>
-          </select>
+          <input ref={dueRef} type="date" id="due" name="due" />
           <button type="submit">Add</button>
         </form>
       }
