@@ -43,6 +43,9 @@ const AddItemForm = () => {
       </div>
       {addItemFormVisibility &&
         <form onSubmit={addItem}>
+          <input type="text" name="name" id="name" placeholder="Name" required />
+          <input type="text" name="menge" id="menge" placeholder="Menge" />
+          <input type="text" name="info" id="info" placeholder="Info" />
           <select name="typ" id="typ">
             <option value="einkauf">Einkauf</option>
             <option value="todo">ToDo</option>
@@ -53,9 +56,6 @@ const AddItemForm = () => {
             <option value="drogerie">Drogerie</option>
             <option value="seeInfo">Siehe Info</option>
           </select>
-          <input type="text" name="name" id="name" placeholder="Name" required />
-          <input type="text" name="menge" id="menge" placeholder="Menge" />
-          <input type="text" name="info" id="info" placeholder="Info" />
           <select name="wer" id="wer">
             <option value=""></option>
             <option value="Kersi">Kersi</option>
