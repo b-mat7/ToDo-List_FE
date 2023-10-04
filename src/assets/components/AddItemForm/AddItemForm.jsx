@@ -58,8 +58,8 @@ const AddItemForm = () => {
           </select>
           <select name="wer" id="wer">
             <option value=""></option>
-            <option value="Kersi">Kersi</option>
-            <option value="Matze">Matze</option>
+            <option value="kersi">Kersi</option>
+            <option value="matze">Matze</option>
           </select>
           <input type="date" id="faellig" name="faellig" />
           <select name="status" id="status">
