@@ -7,15 +7,16 @@
 // ==================================
 //           GENERAL STYLES
 // ==================================
-// :root {
-//   font-family: var.$font-family_primary;
-//   color: var.$color_primary;
+:root {
+  font-family: var.$font-family_primary;
+  
+  color: var.$color_font_white;
 
-//   font-synthesis: none;
-//   text-rendering: optimizeLegibility;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   -webkit-text-size-adjust: 100%;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  // -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 
-//   background-color: var.$color_root_background;
-// }
+  // background-color: var.$color_root_background;
+}

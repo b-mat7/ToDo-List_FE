@@ -1,10 +1,10 @@
 // ==================================
 //           IMPORT
 // ==================================
-// @font-face {
-//   font-family: "Helvetica Neue-Thin";
-//   src: url("../../fonts/HelveticaNeue-Thin/HelveticaNeue\ Thin.ttf");
-// }
+@font-face {
+  font-family: "HelveticaNeue-Thin";
+  src: url("../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.ttf");
+}
 
 // ==================================
 //           VARIABLES
@@ -12,22 +12,13 @@
 
 // ========= Styling ================
 
+$font-family_primary: HelveticaNeue-Thin;
 
-
-// $font-family_primary: Helvetica Neue-Thin;
-
-// $color_primary: hsla(0, 0%, 100%, 1);
-// $color_accent1: hsla(0, 0%, 0%, 1);
-// $color_root_background: hsla(0, 0%, 13%, 1);
-
-// Free2Game ==========
-// $font-family_primary: SpaceGrotesk;
-// $font-family_accent: Oswald;
-
+$color_root_background: hsla(0, 0%, 13%, 1);
 // $root_background_image: "./assets/images/image_background.jpeg";
 
-// $color_font_white: hsla(0, 0%, 100%, 1);
-// $color_font_smoke: hsla(210, 2%, 78%, 1);
+$color_font_white: hsla(0, 0%, 100%, 1);
+$color_font_smoke: hsla(210, 2%, 78%, 1);
 
 // $color_primary: hsla(199, 67%, 5%, 1);
 // $color_accent_bluelight: hsla(209, 34%, 33%, 1);
