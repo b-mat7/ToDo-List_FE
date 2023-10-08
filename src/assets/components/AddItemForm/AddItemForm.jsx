@@ -15,7 +15,6 @@ const AddItemForm = () => {
   const ownerRef = useRef()
   const dueRef = useRef()
 
-  const toggleFormVisibility = () => setFormVisibility(prev => !prev)
 
   const addItem = async (event) => {
     event.preventDefault()
@@ -61,7 +60,7 @@ const AddItemForm = () => {
   return (
     <section className={styles.additem_form}>
       <div>
-        <button onClick={toggleFormVisibility}>+++</button>
+        <button onClick={()=> setFormVisibility(prev => !prev)}>+++</button>
       </div>
       {formVisibility &&
         <form onSubmit={addItem}>

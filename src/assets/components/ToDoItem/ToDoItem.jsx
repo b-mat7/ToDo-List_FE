@@ -17,7 +17,6 @@ const ToDoItem = ({ item }) => {
   const ownerRef = useRef()
   const dueRef = useRef()
 
-  const toggleEditMode = () => setEditMode(prev => !prev)
 
   // Update the edited item's fields while typing
   const handleInputChange = (event) => {
@@ -48,7 +47,7 @@ const ToDoItem = ({ item }) => {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
         method: "PUT",
         headers: {
-          //   authorization,
+          // "authorization": "Bearer " + localStorage.getItem('token'),
           "content-type": "application/json"
         },
         body: JSON.stringify(formData)
@@ -68,7 +67,7 @@ const ToDoItem = ({ item }) => {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
         method: "PATCH",
         headers: {
-          // authorization,
+          // "authorization": "Bearer " + localStorage.getItem('token'),
           "content-type": "application/json"
         },
         body: JSON.stringify({ _id: item._id, active: !item.active, edited: new Date().toISOString() })
@@ -88,7 +87,7 @@ const ToDoItem = ({ item }) => {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
         method: "DELETE",
         headers: {
-          // authorization,
+          // "authorization": "Bearer " + localStorage.getItem('token'),
           "content-type": "application/json"
         },
         body: JSON.stringify({ _id: item._id })
@@ -134,7 +133,7 @@ const ToDoItem = ({ item }) => {
 
         <div>
           {item.active === true &&
-            <button onClick={toggleEditMode}>Edit</button>
+            <button onClick={()=> setEditMode(prev => !prev)}>Edit</button>
           }
 
           <div onClick={editActive}>
