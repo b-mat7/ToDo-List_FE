@@ -10,14 +10,19 @@
 //           APP STYLES
 // ==================================
 
-// #root {
-//   max-width: var.$root_width_desktop;
-//   margin: 0 auto;
-//   padding: 4rem 0;
-// }
-
 // @media screen and (max-width: var.$breakpoint_xxs) {
 //   #root {
-//     padding-bottom: 0;
+//   max-width: var.$root_width_desktop;
 //   }
 // }
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var.$color_root_background;
+}

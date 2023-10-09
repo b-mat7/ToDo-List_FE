@@ -6,6 +6,11 @@
   src: url("../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.ttf");
 }
 
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("../fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf");
+}
+
 // ==================================
 //           VARIABLES
 // ==================================
@@ -13,6 +18,7 @@
 // ========= Styling ================
 
 $font-family_primary: HelveticaNeue-Thin;
+$font-family_accent: SpaceGrotesk;
 
 $color_root_background: hsla(0, 0%, 13%, 1);
 // $root_background_image: "./assets/images/image_background.jpeg";

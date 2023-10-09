@@ -33,14 +33,14 @@ function App() {
   }, [refresh])
 
   return (
-    <>
-      <RefreshContext.Provider value={{ refresh, setRefresh }}>
-        <ToDosContext.Provider value={{ toDos, setToDos }}>
-          <AddItemForm />
-          <ToDosContainer />
-        </ToDosContext.Provider>
-      </RefreshContext.Provider>
-    </>
+    <main>
+        <RefreshContext.Provider value={{ refresh, setRefresh }}>
+          <ToDosContext.Provider value={{ toDos, setToDos }}>
+            <AddItemForm />
+            <ToDosContainer />
+          </ToDosContext.Provider>
+        </RefreshContext.Provider>
+    </main>
   )
 }
 
