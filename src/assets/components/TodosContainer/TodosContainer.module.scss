@@ -1,6 +1,22 @@
 .toDos_container {
-  background-color: rgb(39, 199, 191);
+  min-width: 375px;
+  padding: 1rem;
+
   display: flex;
-  justify-content: center;
-  gap: 1rem
+  justify-content: space-around;
+
+  text-align: center;
+  background-color: rgb(39, 199, 191);
+
+  .active {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .inactive {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
 }

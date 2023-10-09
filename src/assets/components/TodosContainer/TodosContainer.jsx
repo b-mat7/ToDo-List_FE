@@ -15,14 +15,14 @@ const ToDosContainer = () => {
 
   return (
     <section className={styles.toDos_container}>
-      <div>Aktiv</div>
+      <div className={styles.active}>Aktiv</div>
       {activeToDos.map((item, key) => (
         <ToDoItem
           key={key}
           item={item}
         />
       ))}
-      <div>Done</div>
+      <div className={styles.inactive}>Done</div>
       {inactiveToDos.map((item, key) => (
         <ToDoItem
           key={key}
