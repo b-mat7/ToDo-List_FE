@@ -54,7 +54,7 @@ const ToDoItem = ({ item }) => {
       })
 
       if (response.ok) {
-        toggleEditMode()
+        setEditMode(prev => !prev)
         setRefresh(prev => !prev)
       }
     } catch (error) {

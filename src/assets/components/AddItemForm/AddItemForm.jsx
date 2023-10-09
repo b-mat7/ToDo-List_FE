@@ -49,7 +49,7 @@ const AddItemForm = () => {
         sourceRef.current.value = "supermarkt"
         ownerRef.current.value = ""
         dueRef.current.value = ""
-        toggleFormVisibility()
+        setFormVisibility(prev => !prev)
         setRefresh(prev => !prev)
       }
     } catch (error) {
