@@ -15,20 +15,22 @@ const ToDosContainer = () => {
 
   return (
     <section className={styles.toDos_container}>
-      <div className={styles.active}>Aktiv</div>
-      {activeToDos.map((item, key) => (
-        <ToDoItem
-          key={key}
-          item={item}
-        />
-      ))}
-      <div className={styles.inactive}>Done</div>
-      {inactiveToDos.map((item, key) => (
-        <ToDoItem
-          key={key}
-          item={item}
-        />
-      ))}
+      <div className={styles.active}>
+        {activeToDos.map((item, key) => (
+          <ToDoItem
+            key={key}
+            item={item}
+          />
+        ))}
+      </div>
+      <div className={styles.inactive}>
+        {inactiveToDos.map((item, key) => (
+          <ToDoItem
+            key={key}
+            item={item}
+          />
+        ))}
+      </div>
     </section>
   );
 }

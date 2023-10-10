@@ -1,3 +1,5 @@
+@use "../../styles/variables.module" as var;
+
 .additem_form {
   min-width: 375px;
   padding: 1rem;
@@ -13,9 +15,9 @@
       min-height: 3rem;
       font-weight: 700;
       background-color: green;
-      border: 2px solid white;
+      border: 2px solid var.$color_font_white;
       border-radius: 10px;
-      color: white;
+      color: var.$color_font_white;
     }
   }
 
@@ -31,9 +33,9 @@
       button {
         font-weight: 700;
         background-color: green;
-        border: 2px solid white;
+        border: 2px solid var.$color_font_white;
         border-radius: 10px;
-        color: white;
+        color: var.$color_font_white;
       }
     }
   }

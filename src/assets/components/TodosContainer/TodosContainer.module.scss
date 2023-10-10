@@ -1,22 +1,31 @@
+@use "../../styles/variables.module" as var;
+
 .toDos_container {
   min-width: 375px;
   padding: 1rem;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 0.5rem;
 
-  text-align: center;
   background-color: rgb(39, 199, 191);
 
   .active {
+    width: 50%;
     display: flex;
     flex-direction: column;
+    // justify-content: center;
     gap: 5px;
+
+    background-color: coral;
   }
 
   .inactive {
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 5px;
+
+    background-color: lightpink;
   }
 }

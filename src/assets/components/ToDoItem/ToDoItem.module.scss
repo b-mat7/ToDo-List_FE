@@ -1,4 +1,41 @@
+@use "../../styles/variables.module" as var;
+
 .todo_item {
+  font-size: 0.65rem;
   color: green;
+  background-color: lightgray;
   border: 1px solid black;
+
+  .edit {
+    display: flex;
+    gap: 0.5rem;
+
+    .edit_line1,
+    .edit_line2,
+    .edit_line3 {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+
+  .display {
+    display: flex;
+    gap: 0.5rem;
+
+    .display_line1,
+    .display_line2,
+    .display_line3 {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+  }
+}
+
+.active {
+  justify-content: flex-start;
+}
+
+.inactive {
+  justify-content: flex-end
 }
