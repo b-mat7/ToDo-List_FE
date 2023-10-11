@@ -54,14 +54,6 @@ const ToDoItem = ({ item }) => {
       })
 
       if (response.ok) {
-        nameRef.current.value = ""
-        qtyRef.current.value = ""
-        noteRef.current.value = ""
-        typeRef.current.value = ""
-        sourceRef.current.value = ""
-        ownerRef.current.value = ""
-        dueRef.current.value = ""
-
         setEditMode(prev => !prev)
         setRefresh(prev => !prev)
       }

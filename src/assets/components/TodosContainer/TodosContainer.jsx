@@ -18,7 +18,7 @@ const ToDosContainer = () => {
       <div className={styles.active}>
         {activeToDos.map((item, key) => (
           <ToDoItem
-            key={key}
+            key={item._id}
             item={item}
           />
         ))}
@@ -26,7 +26,7 @@ const ToDosContainer = () => {
       <div className={styles.inactive}>
         {inactiveToDos.map((item, key) => (
           <ToDoItem
-            key={key}
+            key={item._id}
             item={item}
           />
         ))}

@@ -1,14 +1,16 @@
 // ==================================
 //           IMPORT
 // ==================================
+
+// Pfad muss vom Project-root folder sein da dort später das compilierte css file liegt...
 @font-face {
   font-family: "HelveticaNeue-Thin";
-  src: url("../fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.ttf");
+  src: url("./src/assets/fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.ttf");
 }
 
 @font-face {
   font-family: "SpaceGrotesk";
-  src: url("../fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf");
+  src: url("./src/assets/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf");
 }
 
 // ==================================
