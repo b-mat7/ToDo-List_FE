@@ -1,8 +1,8 @@
-import styles from './ControlsBar.module.scss'
+import styles from './ControlBar.module.scss'
 
-const ControlsBar = () => {
+const ControlBar = () => {
   return (
-    <section className={styles.controls_bar}>
+    <section className={styles.controlbar}>
       <div>
         <input type="text" name="search" id="search" placeholder="Suche" />
       </div>
@@ -13,4 +13,4 @@ const ControlsBar = () => {
   );
 }
 
-export default ControlsBar;
+export default ControlBar;

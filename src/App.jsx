@@ -1,10 +1,10 @@
 import { createContext, useEffect, useState } from 'react'
 
 import AddItemForm from './assets/components/AddItemForm/AddItemForm'
+import ControlBar from './assets/components/ControlBar/ControlBar'
 import ToDosContainer from './assets/components/TodosContainer/TodosContainer'
 
 import './App.scss'
-
 
 export const RefreshContext = createContext()
 export const ToDosContext = createContext()
@@ -37,6 +37,7 @@ function App() {
         <RefreshContext.Provider value={{ refresh, setRefresh }}>
           <ToDosContext.Provider value={{ toDos, setToDos }}>
             <AddItemForm />
+            <ControlBar />
             <ToDosContainer />
           </ToDosContext.Provider>
         </RefreshContext.Provider>
