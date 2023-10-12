@@ -1,14 +1,41 @@
+import { useContext, useEffect, useState } from 'react';
+import { RefreshContext } from '../../../App';
+
+import ToDosContainer from '../TodosContainer/TodosContainer';
+
 import styles from './ControlBar.module.scss'
 
-const ControlBar = () => {
+const ControlBar = ({ toDos }) => {
+  const [filteredToDos, setFilteredToDos] = useState([])
+  const [isFiltered, setIsFiltered] = useState(false)
+
+  const { refresh, setRefresh } = useContext(RefreshContext)
+
+  useEffect(() => {
+    setFilteredToDos(toDos)
+  }, [toDos])
+
+
+  const filterByType = () => {
+    if (isFiltered) {
+      setFilteredToDos(toDos)
+      setIsFiltered(prev => !prev)
+    } else {
+      const filteredToDos = [...toDos].filter(item => item.type === "todo")
+      setFilteredToDos(filteredToDos)
+      setIsFiltered(prev => !prev)
+    }
+  }
+
   return (
     <section className={styles.controlbar}>
       <div>
         <input type="text" name="search" id="search" placeholder="Suche" />
       </div>
       <div>
-        <p>Filterings</p>
+        <button onClick={filterByType}>Type</button>
       </div>
+      <ToDosContainer filteredToDos={filteredToDos} />
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 
+import LandingPage from './assets/components/LandingPage/LandingPage'
 import AddItemForm from './assets/components/AddItemForm/AddItemForm'
 import ControlBar from './assets/components/ControlBar/ControlBar'
 import ToDosContainer from './assets/components/TodosContainer/TodosContainer'
@@ -7,17 +8,13 @@ import ToDosContainer from './assets/components/TodosContainer/TodosContainer'
 import './App.scss'
 
 export const RefreshContext = createContext()
-export const ToDosContext = createContext()
-
 
 function App() {
   const [refresh, setRefresh] = useState(false)
   const [toDos, setToDos] = useState([])
 
   useEffect(() => {
-
     const getItems = async () => {
-
       try {
         const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`)
 
@@ -34,13 +31,11 @@ function App() {
 
   return (
     <main>
-        <RefreshContext.Provider value={{ refresh, setRefresh }}>
-          <ToDosContext.Provider value={{ toDos, setToDos }}>
-            <AddItemForm />
-            <ControlBar />
-            <ToDosContainer />
-          </ToDosContext.Provider>
-        </RefreshContext.Provider>
+      <RefreshContext.Provider value={{ refresh, setRefresh }}>
+        <AddItemForm />
+        <ControlBar toDos={toDos} />
+        {/* <ToDosContainer /> */}
+      </RefreshContext.Provider>
     </main>
   )
 }
