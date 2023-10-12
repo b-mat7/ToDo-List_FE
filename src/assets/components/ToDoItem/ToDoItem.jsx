@@ -27,6 +27,7 @@ const ToDoItem = ({ item }) => {
     }));
   };
 
+
   const editItem = async (event) => {
     event.preventDefault()
 
@@ -62,6 +63,7 @@ const ToDoItem = ({ item }) => {
     }
   }
 
+  
   const editActive = async () => {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
