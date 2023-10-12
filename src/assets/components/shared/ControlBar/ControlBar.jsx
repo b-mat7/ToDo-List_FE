@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
-import { RefreshContext } from '../../../App';
+import { RefreshContext } from '../../pages/Home/Home';
 
-import ToDosContainer from '../TodosContainer/TodosContainer';
+import ToDosContainer from '../ToDosContainer/TodosContainer';
 
 import styles from './ControlBar.module.scss'
 
