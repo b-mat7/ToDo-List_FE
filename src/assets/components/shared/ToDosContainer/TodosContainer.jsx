@@ -1,6 +1,6 @@
 import ToDoItem from '../ToDoItem/ToDoItem';
 
-import styles from './TodosContainer.module.scss'
+// import styles from './TodosContainer.module.scss'
 
 const ToDosContainer = ({filteredToDos}) => {
 
