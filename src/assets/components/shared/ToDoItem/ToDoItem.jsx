@@ -48,9 +48,9 @@ const ToDoItem = ({ item }) => {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
         method: "PUT",
         headers: {
-          // "authorization": "Bearer " + localStorage.getItem('token'),
           "content-type": "application/json"
         },
+        credentials: "include",
         body: JSON.stringify(formData)
       })
 
@@ -69,9 +69,9 @@ const ToDoItem = ({ item }) => {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
         method: "PATCH",
         headers: {
-          // "authorization": "Bearer " + localStorage.getItem('token'),
           "content-type": "application/json"
         },
+        credentials: "include",
         body: JSON.stringify({ _id: item._id, active: !item.active, edited: new Date().toISOString() })
       })
 
@@ -89,9 +89,9 @@ const ToDoItem = ({ item }) => {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
         method: "DELETE",
         headers: {
-          // "authorization": "Bearer " + localStorage.getItem('token'),
           "content-type": "application/json"
         },
+        credentials: "include",
         body: JSON.stringify({ _id: item._id })
       })
 

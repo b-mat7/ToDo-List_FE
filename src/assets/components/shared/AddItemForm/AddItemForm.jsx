@@ -38,6 +38,7 @@ const AddItemForm = () => {
           // authorization,
           "content-type": "application/json"
         },
+        credentials: "include",
         body: JSON.stringify(formData)
       })
 

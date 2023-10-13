@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './Login.module.scss'
@@ -8,6 +8,19 @@ const Login = () => {
   const navigate = useNavigate()
 
   const passRef = useRef()
+
+  useEffect(() => {
+    const checkToken = async () => {
+      const response = await fetch(`${import.meta.env.VITE_API_LINK}/validate`,
+      {
+        credentials: "include"
+      })
+      if(response.ok) {
+        navigate("/home")
+      }
+    }
+    checkToken()
+  }, [])
 
   const handleLogin = async () => {
     try {
