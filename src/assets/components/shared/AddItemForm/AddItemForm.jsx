@@ -35,7 +35,6 @@ const AddItemForm = () => {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
         method: "POST",
         headers: {
-          // authorization,
           "content-type": "application/json"
         },
         credentials: "include",

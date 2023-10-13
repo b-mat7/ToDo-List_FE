@@ -63,7 +63,7 @@ const ToDoItem = ({ item }) => {
     }
   }
 
-  
+
   const editActive = async () => {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
@@ -72,7 +72,11 @@ const ToDoItem = ({ item }) => {
           "content-type": "application/json"
         },
         credentials: "include",
-        body: JSON.stringify({ _id: item._id, active: !item.active, edited: new Date().toISOString() })
+        body: JSON.stringify({ 
+          _id: item._id, 
+          active: !item.active, 
+          edited: new Date().toISOString() 
+        })
       })
 
       if (response.ok) {

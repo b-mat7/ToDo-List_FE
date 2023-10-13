@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
 import { RefreshContext } from '../../pages/Home/Home';
-
 import ToDosContainer from '../ToDosContainer/TodosContainer';
 
 import styles from './ControlBar.module.scss'
@@ -13,7 +12,11 @@ const ControlBar = ({ toDos }) => {
 
   useEffect(() => {
     setFilteredToDos(toDos)
-  }, [toDos])
+    if (isFiltered) {
+      const filteredToDosItems = [...toDos].filter(item => item.type === "todo")
+      setFilteredToDos(filteredToDosItems)
+    }
+  }, [toDos, isFiltered])
 
 
   const filterByType = () => {
@@ -21,8 +24,8 @@ const ControlBar = ({ toDos }) => {
       setFilteredToDos(toDos)
       setIsFiltered(prev => !prev)
     } else {
-      const filteredToDos = [...toDos].filter(item => item.type === "todo")
-      setFilteredToDos(filteredToDos)
+      const filteredToDosItems = [...toDos].filter(item => item.type === "todo")
+      setFilteredToDos(filteredToDosItems)
       setIsFiltered(prev => !prev)
     }
   }
