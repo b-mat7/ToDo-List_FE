@@ -1,8 +1,11 @@
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import styles from './Login.module.scss'
 
 const Login = () => {
+
+  const navigate = useNavigate()
 
   const passRef = useRef()
 
@@ -11,21 +14,16 @@ const Login = () => {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/login`, {
         method: "POST",
         headers: {
-          // siehe http only...
           "content-type": "application/json"
         },
-        body: JSON.stringify({passphrase : passRef.current.value})
+        credentials: "include",
+        body: JSON.stringify({ passphrase: passRef.current.value })
       })
 
-      if(response.ok) {
-        const result = await response.json()
-        console.log(result)
-        // navigate /home
-      }
-
-      else {
-        const result = await response.json()
-        console.log(result)
+      if (response.ok) {
+        navigate("/home")
+      } else {
+        // PW falsch anzeigen
       }
 
     } catch (error) {
@@ -34,7 +32,7 @@ const Login = () => {
   }
   return (
     <section className={styles.login}>
-      <input ref={passRef} type="text" name="passphrase" id="passphrase" placeholder='Passphrase'/>
+      <input ref={passRef} type="text" name="passphrase" id="passphrase" placeholder='Passphrase' />
       <button onClick={handleLogin}>Login</button>
     </section>
   );
