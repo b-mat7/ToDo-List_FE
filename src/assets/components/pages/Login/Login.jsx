@@ -42,6 +42,7 @@ const Login = () => {
       if (response.ok) {
         navigate("/home")
       } else {
+        console.log(response.statusText)
         setErr(response.statusText)
       }
     } catch (error) {

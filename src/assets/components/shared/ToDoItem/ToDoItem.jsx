@@ -167,6 +167,7 @@ const ToDoItem = ({ item }) => {
             </div>
             <div className={styles.displayView_line4}>
               <p>{item.note}</p>
+              <p>{item.edited}</p>
             </div>
           </div>
 
