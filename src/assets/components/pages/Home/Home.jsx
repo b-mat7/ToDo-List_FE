@@ -12,13 +12,14 @@ const Home = () => {
 
   const navigate = useNavigate()
 
+  
   useEffect(() => {
     const getItems = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, 
-        {
-          credentials: "include"
-        })
+        const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`,
+          {
+            credentials: "include"
+          })
 
         if (response.ok) {
           const result = await response.json()

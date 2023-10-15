@@ -3,7 +3,6 @@ import { RefreshContext } from '../../pages/Home/Home'
 import styles from './ToDoItem.module.scss'
 
 const ToDoItem = ({ item }) => {
-
   const [editMode, setEditMode] = useState(false)
   const [editedItem, setEditedItem] = useState({ ...item })
 

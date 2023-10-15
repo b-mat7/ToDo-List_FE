@@ -4,7 +4,6 @@ import ToDoItem from '../ToDoItem/ToDoItem';
 import styles from './ToDosContainer.module.scss'
 
 const ToDosContainer = ({ filteredToDos }) => {
-
   const [sortedToDos, setSortedToDos] = useState([])
   const [sortBy, setSortBy] = useState("editedAsc")
 
@@ -16,6 +15,7 @@ const ToDosContainer = ({ filteredToDos }) => {
   const editedDes = (a, b) => new Date(b.edited) - new Date(a.edited)
   const sortFunctions = { nameAsc, nameDes, dueAsc, dueDes, editedAsc, editedDes }
 
+  
   useEffect(() => {
     const sorted = [...filteredToDos].sort(sortFunctions[sortBy])
     setSortedToDos(sorted)

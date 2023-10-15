@@ -10,6 +10,7 @@ const ControlBar = ({ toDos }) => {
 
   const { refresh, setRefresh } = useContext(RefreshContext)
 
+  
   useEffect(() => {
     setFilteredToDos(toDos)
     if (isFiltered) {
