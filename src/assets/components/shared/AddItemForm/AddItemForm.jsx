@@ -1,4 +1,5 @@
 import { useContext, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { RefreshContext } from '../../pages/Home/Home';
 import styles from './AddItemForm.module.scss'
 
@@ -6,6 +7,8 @@ const AddItemForm = () => {
   const [formVisibility, setFormVisibility] = useState(false)
 
   const { refresh, setRefresh } = useContext(RefreshContext)
+
+  const navigate = useNavigate()
 
   const nameRef = useRef()
   const qtyRef = useRef()
@@ -51,6 +54,8 @@ const AddItemForm = () => {
         dueRef.current.value = ""
         setFormVisibility(prev => !prev)
         setRefresh(prev => !prev)
+      } else {
+        navigate("/")
       }
     } catch (error) {
       console.error(error.message)

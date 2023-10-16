@@ -1,4 +1,5 @@
 import { useContext, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { RefreshContext } from '../../pages/Home/Home'
 import styles from './ToDoItem.module.scss'
 
@@ -7,6 +8,8 @@ const ToDoItem = ({ item }) => {
   const [editedItem, setEditedItem] = useState({ ...item })
 
   const { refresh, setRefresh } = useContext(RefreshContext)
+
+  const navigate = useNavigate()
 
   const nameRef = useRef()
   const qtyRef = useRef()
@@ -56,6 +59,8 @@ const ToDoItem = ({ item }) => {
       if (response.ok) {
         setEditMode(prev => !prev)
         setRefresh(prev => !prev)
+      } else {
+        navigate("/")
       }
     } catch (error) {
       console.error(error.message)
@@ -63,7 +68,7 @@ const ToDoItem = ({ item }) => {
   }
 
 
-  const editActive = async () => {
+  const editItemStatus = async () => {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_LINK}/todos`, {
         method: "PATCH",
@@ -80,6 +85,8 @@ const ToDoItem = ({ item }) => {
 
       if (response.ok) {
         setRefresh(prev => !prev)
+      } else {
+        navigate("/")
       }
     } catch (error) {
       console.error(error.message)
@@ -100,6 +107,8 @@ const ToDoItem = ({ item }) => {
 
       if (response.ok) {
         setRefresh(prev => !prev)
+      } else {
+        navigate("/")
       }
     } catch (error) {
       console.error(error.message)
@@ -151,7 +160,7 @@ const ToDoItem = ({ item }) => {
             <button onClick={() => setEditMode(prev => !prev)}>Edit</button>
           }
 
-          <div onClick={editActive}>
+          <div onClick={editItemStatus}>
             <div className={styles.displayView_line1}>
               <p>{item.name}</p>
               <p>{item.qty}</p>
