@@ -5,13 +5,13 @@ import styles from './ToDosContainer.module.scss'
 
 const ToDosContainer = ({ filteredToDos }) => {
   const [sortedToDos, setSortedToDos] = useState([])
-  const [sortBy, setSortBy] = useState("editedAsc")
+  const [sortBy, setSortBy] = useState("editedDes")
 
   const nameAsc = (a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1
   const nameDes = (a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? -1 : 1
   const dueAsc = (a, b) => new Date(a.due) - new Date(b.due)
   const dueDes = (a, b) => new Date(b.due) - new Date(a.due)
-  const editedAsc = (a, b) =>  new Date(a.edited) - new Date(b.edited)
+  const editedAsc = (a, b) => new Date(a.edited) - new Date(b.edited)
   const editedDes = (a, b) => new Date(b.edited) - new Date(a.edited)
   const sortFunctions = { nameAsc, nameDes, dueAsc, dueDes, editedAsc, editedDes }
 
