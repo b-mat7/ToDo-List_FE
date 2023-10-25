@@ -1,7 +1,3 @@
-# Token
-Unterscheiden: 403 -> "/login"   500 -> "err msg" ohne fwd
-
-
 # FilterBy Btns
 TYP - ORT - OWNER
 state pro btn(false) -onClick-> prev => !prev, class drauf (myIdea)

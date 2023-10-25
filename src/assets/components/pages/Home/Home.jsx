@@ -10,10 +10,7 @@ const Home = () => {
   const [refresh, setRefresh] = useState(false)
   const [toDos, setToDos] = useState([])
   const [err, setErr] = useState("")
-
-  const navigate = useNavigate()
-
-  
+ 
   useEffect(() => {
     const getItems = async () => {
       try {
@@ -26,8 +23,6 @@ const Home = () => {
           const result = await response.json()
           setToDos(result)
         } else {
-          // Protected Route mit fetch "/validate" + err.fwd "/login"
-          // check render redirect setup...
           setErr("Failed to retreive content")
         }
       } catch (error) {

@@ -10,7 +10,7 @@ const Login = () => {
 
   
   useEffect(() => {
-    const checkToken = async () => {
+    const validateToken = async () => {
       try {
         const response = await fetch(`${import.meta.env.VITE_API_LINK}/validate`,
           {
@@ -24,7 +24,7 @@ const Login = () => {
         console.error(error.message)
       }
     }
-    checkToken()
+    validateToken()
   }, [])
 
 
