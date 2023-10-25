@@ -42,8 +42,7 @@ const Login = () => {
       if (response.ok) {
         navigate("/home")
       } else {
-        console.log(response.statusText)
-        setErr(response.statusText)
+        setErr("Wrong passphrase")
       }
     } catch (error) {
       console.error(error.message)
@@ -54,7 +53,7 @@ const Login = () => {
     <section className={styles.login}>
       <input ref={passRef} type="password" name="passphrase" id="passphrase" placeholder='Passphrase' />
       <button onClick={handleLogin}>Login</button>
-      <p>{err}</p>
+      {err && <p>{err}</p>}
     </section>
   );
 }

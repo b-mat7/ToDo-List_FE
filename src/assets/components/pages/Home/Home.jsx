@@ -9,6 +9,7 @@ export const RefreshContext = createContext()
 const Home = () => {
   const [refresh, setRefresh] = useState(false)
   const [toDos, setToDos] = useState([])
+  const [err, setErr] = useState("")
 
   const navigate = useNavigate()
 
@@ -25,7 +26,9 @@ const Home = () => {
           const result = await response.json()
           setToDos(result)
         } else {
-          navigate("/")
+          // Protected Route mit fetch "/validate" + err.fwd "/login"
+          // check render redirect setup...
+          setErr("Failed to retreive content")
         }
       } catch (error) {
         console.error(error.message)
@@ -39,6 +42,7 @@ const Home = () => {
       <RefreshContext.Provider value={{ refresh, setRefresh }}>
         <AddItemForm />
         <ControlBar toDos={toDos} />
+        {err && <p>{err}</p>}
       </RefreshContext.Provider>
     </section>
   );
