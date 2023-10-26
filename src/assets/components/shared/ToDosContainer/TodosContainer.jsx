@@ -15,7 +15,7 @@ const ToDosContainer = ({ filteredToDos }) => {
   const editedDes = (a, b) => new Date(b.edited) - new Date(a.edited)
   const sortFunctions = { nameAsc, nameDes, dueAsc, dueDes, editedAsc, editedDes }
 
-  
+
   useEffect(() => {
     const sorted = [...filteredToDos].sort(sortFunctions[sortBy])
     setSortedToDos(sorted)
@@ -26,11 +26,11 @@ const ToDosContainer = ({ filteredToDos }) => {
 
   return (
     <section className={styles.toDos_container}>
-      <div className={styles.sortByPanel}>
+      {/* <div className={styles.sortByPanel}>
         <button onClick={() => setSortBy("nameAsc")}>Name</button>
         <button onClick={() => setSortBy("editedAsc")}>Bearbeitet</button>
         <button onClick={() => setSortBy("dueAsc")}>Fällig</button>
-      </div>
+      </div> */}
       <div className={styles.itemContainer}>
         <div className={styles.active}>
           {sortedActiveToDos.map((item) => (

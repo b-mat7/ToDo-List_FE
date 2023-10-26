@@ -20,7 +20,7 @@ const AddItemForm = () => {
 
 
   useEffect(() => {
-    if(formVisibility) nameRef.current.focus()
+    if (formVisibility) nameRef.current.focus()
   }, [formVisibility])
 
 
@@ -87,8 +87,8 @@ const AddItemForm = () => {
             </select>
             <select ref={ownerRef} name="owner" id="owner">
               <option value=""></option>
-              <option value="k">K</option>
-              <option value="m">M</option>
+              <option value="kersi">K</option>
+              <option value="matze">M</option>
             </select>
             <input ref={dueRef} type="date" id="due" name="due" />
             <button type="submit">Hinzufügen</button>

@@ -1,7 +1,7 @@
 @use "../../../styles/variables.module" as var;
 
 .controlbar {
-  color: black;
+  color: var.$color_font_background;
 
   .controlPanel {
     display: flex;

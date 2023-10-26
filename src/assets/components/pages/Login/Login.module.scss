@@ -1,5 +1,21 @@
 @use "../../../styles/variables.module" as var;
 
 .login {
-  color: red;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .passphrase_container {
+    display: flex;
+    gap: 1rem;
+
+    color: var.$color_font_background;
+  }
+
+  .err_container {
+    height: 24px; // to prevent moving input once err appears
+    padding: 1rem 0 1rem 2rem;
+    color: red;
+  }
 }

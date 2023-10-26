@@ -76,10 +76,10 @@ const ToDoItem = ({ item }) => {
           "content-type": "application/json"
         },
         credentials: "include",
-        body: JSON.stringify({ 
-          _id: item._id, 
-          active: !item.active, 
-          edited: new Date().toISOString() 
+        body: JSON.stringify({
+          _id: item._id,
+          active: !item.active,
+          edited: new Date().toISOString()
         })
       })
 
@@ -144,11 +144,11 @@ const ToDoItem = ({ item }) => {
             </div>
             <div className={styles.editView_line4}>
               <select ref={ownerRef} name="owner" id="owner" value={editedItem.owner} onChange={handleInputChange}>
-                  <option value=""></option>
-                  <option value="k">K</option>
-                  <option value="m">M</option>
-                </select>
-                <input ref={dueRef} type="date" id="due" name="due" value={editedItem.due} onChange={handleInputChange} />
+                <option value=""></option>
+                <option value="kersi">K</option>
+                <option value="matze">M</option>
+              </select>
+              <input ref={dueRef} type="date" id="due" name="due" value={editedItem.due} onChange={handleInputChange} />
             </div>
           </div>
         </form>

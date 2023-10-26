@@ -8,7 +8,7 @@ const Login = () => {
   const navigate = useNavigate()
   const passRef = useRef()
 
-  
+
   useEffect(() => {
     const validateToken = async () => {
       try {
@@ -51,9 +51,18 @@ const Login = () => {
 
   return (
     <section className={styles.login}>
-      <input ref={passRef} type="password" name="passphrase" id="passphrase" placeholder='Passphrase' />
-      <button onClick={handleLogin}>Login</button>
-      {err && <p>{err}</p>}
+      <div className={styles.passphrase_container}>
+        <input
+          ref={passRef}
+          type="password"
+          name="passphrase"
+          id="passphrase"
+          placeholder='Passphrase' />
+        <button onClick={handleLogin}>Login</button>
+      </div>
+      <div className={styles.err_container}>
+        {err && <p>{err}</p>}
+      </div>
     </section>
   );
 }

@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
 
 import AddItemForm from "../../shared/AddItemForm/AddItemForm";
 import ControlBar from "../../shared/ControlBar/ControlBar";
@@ -10,7 +9,7 @@ const Home = () => {
   const [refresh, setRefresh] = useState(false)
   const [toDos, setToDos] = useState([])
   const [err, setErr] = useState("")
- 
+
   useEffect(() => {
     const getItems = async () => {
       try {
