@@ -3,4 +3,9 @@
 .controlbar {
   background-color: lightcoral;
   color: black;
+
+  .controlPanel {
+    display: flex;
+    justify-content: center;
+  }
 }

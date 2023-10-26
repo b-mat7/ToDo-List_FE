@@ -7,20 +7,6 @@
   color: black;
   background-color: aqua;
 
-  .container_btn {
-    text-align: end;
-
-    button {
-      min-width: 3rem;
-      min-height: 3rem;
-      font-weight: 700;
-      background-color: green;
-      border: 2px solid var.$color_font_white;
-      border-radius: 10px;
-      color: var.$color_font_white;
-    }
-  }
-
   .container_form {
     display: flex;
     justify-content: center;
@@ -37,6 +23,20 @@
         border-radius: 10px;
         color: var.$color_font_white;
       }
+    }
+  }
+
+  .container_btn {
+    text-align: center;
+
+    button {
+      min-width: 3rem;
+      min-height: 3rem;
+      font-weight: 700;
+      background-color: green;
+      border: 2px solid var.$color_font_white;
+      border-radius: 10px;
+      color: var.$color_font_white;
     }
   }
 }

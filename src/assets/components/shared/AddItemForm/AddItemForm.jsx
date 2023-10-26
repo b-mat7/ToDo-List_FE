@@ -64,9 +64,6 @@ const AddItemForm = () => {
 
   return (
     <section className={styles.additem_form}>
-      <div className={styles.container_btn}>
-        <button onClick={() => setFormVisibility(prev => !prev)}>+</button>
-      </div>
       <div className={styles.container_form}>
         {formVisibility &&
           <form onSubmit={addItem}>
@@ -92,6 +89,9 @@ const AddItemForm = () => {
             <button type="submit">Hinzufügen</button>
           </form>
         }
+      </div>
+      <div className={styles.container_btn}>
+        <button onClick={() => setFormVisibility(prev => !prev)}>+</button>
       </div>
     </section>
   );

@@ -26,26 +26,28 @@ const ToDosContainer = ({ filteredToDos }) => {
 
   return (
     <section className={styles.toDos_container}>
-      <div>
+      <div className={styles.sortByPanel}>
         <button onClick={() => setSortBy("nameAsc")}>Name</button>
-        <button onClick={() => setSortBy("editedAsc")}>Edit</button>
-        <button onClick={() => setSortBy("dueAsc")}>Due</button>
+        <button onClick={() => setSortBy("editedAsc")}>Bearbeitet</button>
+        <button onClick={() => setSortBy("dueAsc")}>Fällig</button>
       </div>
-      <div className={styles.active}>
-        {sortedActiveToDos.map((item) => (
-          <ToDoItem
-            key={item._id}
-            item={item}
-          />
-        ))}
-      </div>
-      <div className={styles.inactive}>
-        {sortedInactiveToDos.map((item) => (
-          <ToDoItem
-            key={item._id}
-            item={item}
-          />
-        ))}
+      <div className={styles.itemContainer}>
+        <div className={styles.active}>
+          {sortedActiveToDos.map((item) => (
+            <ToDoItem
+              key={item._id}
+              item={item}
+            />
+          ))}
+        </div>
+        <div className={styles.inactive}>
+          {sortedInactiveToDos.map((item) => (
+            <ToDoItem
+              key={item._id}
+              item={item}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

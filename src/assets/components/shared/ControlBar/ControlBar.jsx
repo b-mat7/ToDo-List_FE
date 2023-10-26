@@ -97,9 +97,9 @@ const ControlBar = ({ toDos }) => {
 
   return (
     <section className={styles.controlbar}>
-      <div>
+      <div className={styles.controlPanel}>
         <input onChange={handleSearch} type="text" name="search" id="search" placeholder="Suche" value={searchTerm} />
-        
+
         {searchTerm && <button onClick={clearSearch}>X</button>}
 
         <select value={filterBtn} onChange={(event) => handleFilterBtn(event.target.value)}>
