@@ -1,11 +1,39 @@
 @use "../../../styles/variables.module" as var;
 
 .controlbar {
-  // background-color: lightcoral;
   color: black;
 
   .controlPanel {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 1rem;
+
+    .search_container {
+      position: relative;
+
+      .search_input {
+        max-width: 160px;
+      }
+  
+      .search_clear {
+        position: absolute;
+        top: 7%;
+        left: 80%;
+
+        width: 30px;
+        background-color: transparent;
+        border: none;
+        color: hsla(0, 100%, 1%, 0.5)
+      }
+    }
+
+    .filter_container {
+      display: flex;
+      gap: 0.5rem;
+
+      button {
+        padding: 0 0.2rem
+      }
+    }
   }
 }

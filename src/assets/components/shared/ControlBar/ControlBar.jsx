@@ -98,18 +98,27 @@ const ControlBar = ({ toDos }) => {
   return (
     <section className={styles.controlbar}>
       <div className={styles.controlPanel}>
-        <input onChange={handleSearch} type="text" name="search" id="search" placeholder="Suche" value={searchTerm} />
+        <div className={styles.search_container}>
+          <input
+            onChange={handleSearch}
+            type="text"
+            name="search"
+            id="search"
+            className={styles.search_input} placeholder="Suche"
+            value={searchTerm} />
 
-        {searchTerm && <button onClick={clearSearch}>X</button>}
-
-        <select value={filterBtn} onChange={(event) => handleFilterBtn(event.target.value)}>
-          <option value="">Ort</option>
-          <option value="su-markt">Su-Markt</option>
-          <option value="apotheke">Apotheke</option>
-          <option value="drogerie">Drogerie</option>
-          <option value="s.Info">s.Info</option>
-        </select>
-        <button onClick={(event) => handleFilterBtn("")}>Reset</button>
+          {searchTerm && <button onClick={clearSearch} className={styles.search_clear}>X</button>}
+        </div>
+        <div className={styles.filter_container}>
+          <select value={filterBtn} onChange={(event) => handleFilterBtn(event.target.value)}>
+            <option value="">Ort</option>
+            <option value="su-markt">Su-Markt</option>
+            <option value="apotheke">Apotheke</option>
+            <option value="drogerie">Drogerie</option>
+            <option value="s.Info">s.Info</option>
+          </select>
+          <button onClick={(event) => handleFilterBtn("")}>Reset</button>
+        </div>
       </div>
       {/* <div>
         <button onClick={filterByType}>Type</button>
