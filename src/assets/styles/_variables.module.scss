@@ -3,14 +3,15 @@
 // ==================================
 
 // Pfad muss vom Project-root folder sein da dort später das compilierte css file liegt...
-@font-face {
-  font-family: "HelveticaNeue-Thin";
-  src: url("/src/assets/fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.ttf");
-}
-
+// (evtl Problem hier: habe components ordner fälschlicherweise in assets folder...)
 @font-face {
   font-family: "SpaceGrotesk";
   src: url("/src/assets/fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "HelveticaNeue-Thin";
+  src: url("/src/assets/fonts/HelveticaNeue-Thin/HelveticaNeue-Thin.ttf");
 }
 
 // ==================================
@@ -19,8 +20,8 @@
 
 // ========= Styling ================
 
-$font-family_primary: HelveticaNeue-Thin;
-$font-family_accent: SpaceGrotesk;
+$font-family_primary: SpaceGrotesk;
+$font-family_accent: HelveticaNeue-Thin;
 
 $color_root_background: hsla(0, 0%, 13%, 1);
 // $root_background_image: "./assets/images/image_background.jpeg";

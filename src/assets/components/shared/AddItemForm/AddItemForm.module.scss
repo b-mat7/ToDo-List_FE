@@ -18,10 +18,11 @@
     form {
       display: flex;
       flex-direction: column;
-      gap: 0.125rem;
-      min-width: 80%;
+      gap: 0.25rem;
+      min-width: 18rem;
       padding: 1rem;
-      // backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+      border-radius: 8px;
 
       input,
       select {
