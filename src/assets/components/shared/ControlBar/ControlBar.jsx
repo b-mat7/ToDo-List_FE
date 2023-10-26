@@ -43,6 +43,12 @@ const ControlBar = ({ toDos }) => {
     }
   }
 
+  const clearSearch = () => {
+    setSearchTerm("")
+    setPostSearchTodos(toDos)
+    setIsSearchActive(false)
+  }
+
 
 
   // filterBtn functions (also s.u.)
@@ -92,7 +98,9 @@ const ControlBar = ({ toDos }) => {
   return (
     <section className={styles.controlbar}>
       <div>
-        <input onChange={handleSearch} type="text" name="search" id="search" placeholder="Suche" />
+        <input onChange={handleSearch} type="text" name="search" id="search" placeholder="Suche" value={searchTerm} />
+        
+        {searchTerm && <button onClick={clearSearch}>X</button>}
 
         <select value={filterBtn} onChange={(event) => handleFilterBtn(event.target.value)}>
           <option value="">Ort</option>
