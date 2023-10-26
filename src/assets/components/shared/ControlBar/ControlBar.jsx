@@ -4,63 +4,136 @@ import ToDosContainer from '../ToDosContainer/TodosContainer';
 import styles from './ControlBar.module.scss'
 
 const ControlBar = ({ toDos }) => {
-  // const [searchTerm, setSearchTerm] = useState("")
-  const [postSearchFilterTodos, setPostSearchFilterTodos] = useState([])
+  // search States
+  const [searchTerm, setSearchTerm] = useState("")
+  const [postSearchTodos, setPostSearchTodos] = useState([])
+  const [isSearchActive, setIsSearchActive] = useState(false)
 
-  const [filteredToDos, setFilteredToDos] = useState([])
-  const [isFiltered, setIsFiltered] = useState(false)
+  // filterBtn States
+  const [filterBtn, setFilterBtn] = useState("")
+  const [postFilterBtnTodos, setPostFilterBtnTodos] = useState([])
+  const [isFilterBtnActive, setIsFilterBtnActive] = useState(false)
 
-  useEffect(()=> {
-    setPostSearchFilterTodos(toDos)
-  },[toDos])
+  // from our last try together...
+  // const [filteredToDos, setFilteredToDos] = useState([])
+  // const [isFiltered, setIsFiltered] = useState(false)
+
+
+
+  // search functions
+  useEffect(() => {
+    setPostSearchTodos(toDos)
+    if (isSearchActive) {
+      const filtered = [...toDos].filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()))
+      setPostSearchTodos(filtered)
+    }
+  }, [toDos]) // isSearchActive needed ?
 
   const handleSearch = (event) => {
     const searchValue = event.target.value
-    // setSearchTerm(searchValue)
+    setSearchTerm(searchValue)
 
-    if(searchValue) {
+    if (searchValue) {
       const filtered = [...toDos].filter(item => item.name.toLowerCase().includes(searchValue.toLowerCase()))
-      setPostSearchFilterTodos(filtered)
+      setPostSearchTodos(filtered)
+      setIsSearchActive(true)
     } else {
-      setPostSearchFilterTodos(toDos)
+      setPostSearchTodos(toDos)
+      setIsSearchActive(false)
     }
   }
-  
 
-  
+
+
+  // filterBtn functions (also s.u.)
   useEffect(() => {
-    setFilteredToDos(toDos)
-    if (isFiltered) {
-      const filteredToDosItems = [...toDos].filter(item => item.type === "todo")
-      setFilteredToDos(filteredToDosItems)
+    setPostFilterBtnTodos(toDos)
+    if (isFilterBtnActive) {
+      const filtered = [...toDos].filter(item => item.source === filterBtn)
+      setPostFilterBtnTodos(filtered)
     }
-  }, [toDos, isFiltered])
+  }, [toDos]) // isFilterBtnActive needed ?
 
-
-  const filterByType = () => {
-    if (isFiltered) {
-      setFilteredToDos(toDos)
-      setIsFiltered(prev => !prev)
+  const handleFilterBtn = (filterType) => {
+    if (filterType === "") {
+      setFilterBtn("")
+      setPostFilterBtnTodos(toDos)
+      setIsFilterBtnActive(false)
     } else {
-      const filteredToDosItems = [...toDos].filter(item => item.type === "todo")
-      setFilteredToDos(filteredToDosItems)
-      setIsFiltered(prev => !prev)
+      setFilterBtn(filterType)
+      const filtered = [...toDos].filter(item => item.source === filterType)
+      setPostFilterBtnTodos(filtered)
+      setIsFilterBtnActive(true)
     }
   }
+
+
+
+  // from our last try together...
+  // useEffect(() => {
+  //   setFilteredToDos(toDos)
+  //   if (isFiltered) {
+  //     const filteredToDosItems = [...toDos].filter(item => item.type === "todo")
+  //     setFilteredToDos(filteredToDosItems)
+  //   }
+  // }, [toDos, isFiltered])
+
+  // const filterByType = () => {
+  //   if (isFiltered) {
+  //     setFilteredToDos(toDos)
+  //     setIsFiltered(prev => !prev)
+  //   } else {
+  //     const filteredToDosItems = [...toDos].filter(item => item.type === "todo")
+  //     setFilteredToDos(filteredToDosItems)
+  //     setIsFiltered(prev => !prev)
+  //   }
+  // }
 
   return (
     <section className={styles.controlbar}>
       <div>
         <input onChange={handleSearch} type="text" name="search" id="search" placeholder="Suche" />
+
+        <select value={filterBtn} onChange={(event) => handleFilterBtn(event.target.value)}>
+          <option value="">Ort</option>
+          <option value="supermarkt">Supermarkt</option>
+          <option value="apotheke">Apotheke</option>
+          <option value="drogerie">Drogerie</option>
+          <option value="sieheInfo">Siehe Info</option>
+        </select>
+        <button onClick={(event) => handleFilterBtn("")}>Reset</button>
       </div>
-      <div>
+      {/* <div>
         <button onClick={filterByType}>Type</button>
       </div>
-      <ToDosContainer filteredToDos={filteredToDos} />
+      <ToDosContainer filteredToDos={filteredToDos} /> */}
 
-      <ToDosContainer filteredToDos={postSearchFilterTodos} />
+      {isSearchActive
+        ? <ToDosContainer filteredToDos={postSearchTodos} />
+        : <ToDosContainer filteredToDos={postFilterBtnTodos} />
+      }
     </section>
   );
 }
 
 export default ControlBar;
+
+/*
+  mit Übernahme postSearchTodos -> postFilterBtnTodos:
+
+  useEffect(() => {
+    setPostFilterBtnTodos(postSearchTodos)
+  }, [postSearchTodos])
+
+  const handleFilterBtn = (filterType) => {
+    if (filterType === "") {
+      filterBtn("")
+      setPostFilterBtnTodos(postSearchTodos)
+    } else {
+      setFilterBtn(filterType)
+      const filtered = [...postSearchTodos].filter(item => item.source === filterType)
+      setPostFilterBtnTodos(filtered)
+    }
+  }
+
+*/
