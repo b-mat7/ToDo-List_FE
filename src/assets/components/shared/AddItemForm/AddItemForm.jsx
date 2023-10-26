@@ -55,7 +55,7 @@ const AddItemForm = () => {
         setFormVisibility(prev => !prev)
         setRefresh(prev => !prev)
       } else {
-        navigate("/")
+        navigate("/login")
       }
     } catch (error) {
       console.error(error.message)

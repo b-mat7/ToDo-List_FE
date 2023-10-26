@@ -10,6 +10,7 @@ function App() {
   return (
     <main>
       <Routes>
+        {/* +on render.com redirect-rule: "/*" -to-> "/"  */}
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<Login />} />
 

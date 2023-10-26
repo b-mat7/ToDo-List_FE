@@ -1,14 +1,31 @@
-import { useContext, useEffect, useState } from 'react';
-import { RefreshContext } from '../../pages/Home/Home';
+import { useState, useEffect } from 'react';
 import ToDosContainer from '../ToDosContainer/TodosContainer';
 
 import styles from './ControlBar.module.scss'
 
 const ControlBar = ({ toDos }) => {
+  // const [searchTerm, setSearchTerm] = useState("")
+  const [postSearchFilterTodos, setPostSearchFilterTodos] = useState([])
+
   const [filteredToDos, setFilteredToDos] = useState([])
   const [isFiltered, setIsFiltered] = useState(false)
 
-  const { refresh, setRefresh } = useContext(RefreshContext)
+  useEffect(()=> {
+    setPostSearchFilterTodos(toDos)
+  },[toDos])
+
+  const handleSearch = (event) => {
+    const searchValue = event.target.value
+    // setSearchTerm(searchValue)
+
+    if(searchValue) {
+      const filtered = [...toDos].filter(item => item.name.toLowerCase().includes(searchValue.toLowerCase()))
+      setPostSearchFilterTodos(filtered)
+    } else {
+      setPostSearchFilterTodos(toDos)
+    }
+  }
+  
 
   
   useEffect(() => {
@@ -34,12 +51,14 @@ const ControlBar = ({ toDos }) => {
   return (
     <section className={styles.controlbar}>
       <div>
-        <input type="text" name="search" id="search" placeholder="Suche" />
+        <input onChange={handleSearch} type="text" name="search" id="search" placeholder="Suche" />
       </div>
       <div>
         <button onClick={filterByType}>Type</button>
       </div>
       <ToDosContainer filteredToDos={filteredToDos} />
+
+      <ToDosContainer filteredToDos={postSearchFilterTodos} />
     </section>
   );
 }
