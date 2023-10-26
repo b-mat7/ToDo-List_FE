@@ -122,7 +122,7 @@ const ToDoItem = ({ item }) => {
 
         <form onSubmit={editItem} className={styles.editView}>
           <button type="submit" className={styles.editSaveBtn}>Save</button>
-          <div>
+          <div className={styles.editView_container}>
             <div className={styles.editView_line1}>
               <input ref={nameRef} type="text" name="name" id="name" value={editedItem.name} onChange={handleInputChange} required />
               <input ref={qtyRef} type="text" name="qty" id="qty" placeholder="Menge" value={editedItem.qty} onChange={handleInputChange} />
@@ -160,7 +160,7 @@ const ToDoItem = ({ item }) => {
             <button onClick={() => setEditMode(prev => !prev)} className={styles.editSaveBtn}>Edit</button>
           }
 
-          <div onClick={editItemStatus}>
+          <div onClick={editItemStatus} className={styles.displayView_container}>
             <div className={styles.displayView_line1}>
               <p>{item.name}</p>
               <p>{item.qty}</p>
