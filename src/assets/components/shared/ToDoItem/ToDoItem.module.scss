@@ -33,7 +33,18 @@
     .editView_line3,
     .editView_line4 {
       display: flex;
-      gap: 0.2rem;
+      // gap: 0.2rem;
+      justify-content: space-between;
+    }
+
+    .editView_line1 input:nth-of-type(1) {
+      width: 105px;
+    }
+    .editView_line1 input:nth-of-type(2) {
+      width: 30px;
+    }
+    .editView_line2 input {
+      width: 100%;
     }
   }
 
@@ -45,12 +56,22 @@
     .displayView_line3,
     .displayView_line4 {
       display: flex;
-      gap: 0.5rem;
+      // gap: 0.5rem;
       justify-content: space-between;
     }
 
     .displayView_line1 {
       font-weight: 700;
+    }
+    
+    .displayView_line1 input:nth-of-type(1) {
+      width: 105px;
+    }
+    .displayView_line1 input:nth-of-type(2) {
+      width: 30px;
+    }
+    .displayView_line2 input {
+      width: 100%;
     }
   }
 }

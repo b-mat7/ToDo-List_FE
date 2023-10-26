@@ -136,17 +136,17 @@ const ToDoItem = ({ item }) => {
                 <option value="todo">ToDo</option>
               </select>
               <select ref={sourceRef} name="source" id="source" value={editedItem.source} onChange={handleInputChange}>
-                <option value="supermarkt">Supermarkt</option>
+                <option value="su-markt">Su-Markt</option>
                 <option value="apotheke">Apotheke</option>
                 <option value="drogerie">Drogerie</option>
-                <option value="sieheInfo">Siehe Info</option>
+                <option value="s.Info">s.Info</option>
               </select>
             </div>
             <div className={styles.editView_line4}>
               <select ref={ownerRef} name="owner" id="owner" value={editedItem.owner} onChange={handleInputChange}>
                   <option value=""></option>
-                  <option value="kersi">Kersi</option>
-                  <option value="matze">Matze</option>
+                  <option value="k">K</option>
+                  <option value="m">M</option>
                 </select>
                 <input ref={dueRef} type="date" id="due" name="due" value={editedItem.due} onChange={handleInputChange} />
             </div>

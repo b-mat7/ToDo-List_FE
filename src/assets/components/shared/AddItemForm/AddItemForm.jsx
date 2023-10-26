@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RefreshContext } from '../../pages/Home/Home';
 import styles from './AddItemForm.module.scss'
@@ -17,6 +17,11 @@ const AddItemForm = () => {
   const sourceRef = useRef()
   const ownerRef = useRef()
   const dueRef = useRef()
+
+
+  useEffect(() => {
+    if(formVisibility) nameRef.current.focus()
+  }, [formVisibility])
 
 
   const addItem = async (event) => {
@@ -49,7 +54,7 @@ const AddItemForm = () => {
         qtyRef.current.value = ""
         noteRef.current.value = ""
         typeRef.current.value = "einkauf"
-        sourceRef.current.value = "supermarkt"
+        sourceRef.current.value = "su-markt"
         ownerRef.current.value = ""
         dueRef.current.value = ""
         setFormVisibility(prev => !prev)
@@ -75,15 +80,15 @@ const AddItemForm = () => {
               <option value="todo">ToDo</option>
             </select>
             <select ref={sourceRef} name="source" id="source">
-              <option value="supermarkt">Supermarkt</option>
+              <option value="su-markt">Su-Markt</option>
               <option value="apotheke">Apotheke</option>
               <option value="drogerie">Drogerie</option>
-              <option value="sieheInfo">Siehe Info</option>
+              <option value="s.Info">s.Info</option>
             </select>
             <select ref={ownerRef} name="owner" id="owner">
               <option value=""></option>
-              <option value="kersi">Kersi</option>
-              <option value="matze">Matze</option>
+              <option value="k">K</option>
+              <option value="m">M</option>
             </select>
             <input ref={dueRef} type="date" id="due" name="due" />
             <button type="submit">Hinzufügen</button>
