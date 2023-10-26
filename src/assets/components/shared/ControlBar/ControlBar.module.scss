@@ -1,7 +1,6 @@
 @use "../../../styles/variables.module" as var;
 
 .controlbar {
-  color: var.$color_font_background;
 
   .controlPanel {
     display: flex;
@@ -12,15 +11,18 @@
       position: relative;
 
       .search_input {
-        max-width: 160px;
+        text-indent: 0.5rem;
+        max-width: 165px;
+        border-radius: 5px;
+        border: 1px solid var.$color_font_white;
       }
   
       .search_clear {
         position: absolute;
-        top: 7%;
-        left: 80%;
+        top: 6%;
+        left: 78%;
 
-        width: 30px;
+        width: 35px;
         background-color: transparent;
         border: none;
         color: hsla(0, 100%, 1%, 0.5)
@@ -31,8 +33,15 @@
       display: flex;
       gap: 0.5rem;
 
+      select{
+        border-radius: 5px;
+        border: 1px solid var.$color_font_white;
+      }
+
       button {
-        padding: 0 0.2rem
+        padding: 0 0.5rem;
+        border-radius: 5px;
+        border: 1px solid var.$color_font_white;
       }
     }
   }
