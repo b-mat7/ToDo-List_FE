@@ -121,13 +121,16 @@ const ToDoItem = ({ item }) => {
       {editMode ?
 
         <form onSubmit={editItem} className={styles.editView}>
-          <button type="submit">Save</button>
+          <button type="submit" className={styles.editSaveBtn}>Save</button>
           <div>
             <div className={styles.editView_line1}>
               <input ref={nameRef} type="text" name="name" id="name" value={editedItem.name} onChange={handleInputChange} required />
               <input ref={qtyRef} type="text" name="qty" id="qty" placeholder="Menge" value={editedItem.qty} onChange={handleInputChange} />
             </div>
             <div className={styles.editView_line2}>
+              <input ref={noteRef} type="text" name="note" id="note" placeholder="Info" value={editedItem.note} onChange={handleInputChange} />
+            </div>
+            <div className={styles.editView_line3}>
               <select ref={typeRef} name="type" id="type" value={editedItem.type} onChange={handleInputChange}>
                 <option value="einkauf">Einkauf</option>
                 <option value="todo">ToDo</option>
@@ -139,16 +142,13 @@ const ToDoItem = ({ item }) => {
                 <option value="sieheInfo">Siehe Info</option>
               </select>
             </div>
-            <div className={styles.editView_line3}>
-              <select ref={ownerRef} name="owner" id="owner" value={editedItem.owner} onChange={handleInputChange}>
-                <option value=""></option>
-                <option value="kersi">Kersi</option>
-                <option value="matze">Matze</option>
-              </select>
-              <input ref={dueRef} type="date" id="due" name="due" value={editedItem.due} onChange={handleInputChange} />
-            </div>
             <div className={styles.editView_line4}>
-              <input ref={noteRef} type="text" name="note" id="note" placeholder="Info" value={editedItem.note} onChange={handleInputChange} />
+              <select ref={ownerRef} name="owner" id="owner" value={editedItem.owner} onChange={handleInputChange}>
+                  <option value=""></option>
+                  <option value="kersi">Kersi</option>
+                  <option value="matze">Matze</option>
+                </select>
+                <input ref={dueRef} type="date" id="due" name="due" value={editedItem.due} onChange={handleInputChange} />
             </div>
           </div>
         </form>
@@ -157,7 +157,7 @@ const ToDoItem = ({ item }) => {
 
         <div className={`${styles.displayView} ${item.active === true ? styles.active : styles.inactive}`}>
           {item.active === true &&
-            <button onClick={() => setEditMode(prev => !prev)}>Edit</button>
+            <button onClick={() => setEditMode(prev => !prev)} className={styles.editSaveBtn}>Edit</button>
           }
 
           <div onClick={editItemStatus}>
@@ -166,21 +166,23 @@ const ToDoItem = ({ item }) => {
               <p>{item.qty}</p>
             </div>
             <div className={styles.displayView_line2}>
+              <p>{item.note}</p>
+            </div>
+            <div className={styles.displayView_line3}>
               <p>{item.type}</p>
               <p>{item.source}</p>
             </div>
-            <div className={styles.displayView_line3}>
+            <div className={styles.displayView_line4}>
               <p>{item.owner}</p>
               <p>{item.due}</p>
             </div>
-            <div className={styles.displayView_line4}>
-              <p>{item.note}</p>
-              <p>{item.edited}</p>
+            <div className={styles.displayView_line5}>
+              {/* <p>{item.edited}</p> */}
             </div>
           </div>
 
           {item.active === false &&
-            <button onClick={deleteItem}>Del</button>
+            <button onClick={deleteItem} className={styles.deleteBtn}>Del</button>
           }
         </div>
       }

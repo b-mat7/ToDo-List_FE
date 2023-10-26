@@ -7,10 +7,19 @@
   border: 1px solid black;
   border-radius: 10px;
 
-  button {
+  .editSaveBtn {
     min-width: 2rem;
     font-weight: 700;
     background-color: green;
+    border: 2px solid var.$color_font_white;
+    border-radius: 10px;
+    color: var.$color_font_white;
+  }
+
+  .deleteBtn {
+    min-width: 2rem;
+    font-weight: 700;
+    background-color: red;
     border: 2px solid var.$color_font_white;
     border-radius: 10px;
     color: var.$color_font_white;
@@ -21,8 +30,8 @@
     gap: 0.2rem;
 
     .editView_line1,
-    .editView_line2,
-    .editView_line3 {
+    .editView_line3,
+    .editView_line4 {
       display: flex;
       gap: 0.2rem;
     }
@@ -33,11 +42,15 @@
     gap: 0.5rem;
 
     .displayView_line1,
-    .displayView_line2,
-    .displayView_line3 {
+    .displayView_line3,
+    .displayView_line4 {
       display: flex;
       gap: 0.5rem;
       justify-content: space-between;
+    }
+
+    .displayView_line1 {
+      font-weight: 700;
     }
   }
 }
