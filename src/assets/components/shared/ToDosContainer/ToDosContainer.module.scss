@@ -4,7 +4,7 @@
   min-width: 375px;
   padding: 1rem;
 
-  background-color: rgb(39, 199, 191);
+  // background-color: rgb(39, 199, 191);
 
   display: flex;
   flex-direction: column;
@@ -27,8 +27,6 @@
       flex-direction: column;
       // justify-content: center;
       gap: 5px;
-  
-      background-color: coral;
     }
   
     .inactive {
@@ -36,8 +34,6 @@
       display: flex;
       flex-direction: column;
       gap: 5px;
-  
-      background-color: lightpink;
     }
   }
 }

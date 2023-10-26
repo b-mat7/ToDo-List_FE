@@ -35,9 +35,9 @@ const Home = () => {
   return (
     <section>
       <RefreshContext.Provider value={{ refresh, setRefresh }}>
-        <AddItemForm />
         <ControlBar toDos={toDos} />
         {err && <p>{err}</p>}
+        <AddItemForm />
       </RefreshContext.Provider>
     </section>
   );
