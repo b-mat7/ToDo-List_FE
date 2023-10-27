@@ -1,3 +1,8 @@
+Login: LodingState + -animation (Loadingbalken)
+Home: refresh -> muss über /Login ? 
+              -> LoadingState?
+Searchbar runter
+
 # FilterBy Btns
 TYP - ORT - OWNER
 state pro btn(false) -onClick-> prev => !prev, class drauf (myIdea)

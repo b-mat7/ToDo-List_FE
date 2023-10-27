@@ -148,7 +148,7 @@ const ToDoItem = ({ item }) => {
                 <option value="kersi">K</option>
                 <option value="matze">M</option>
               </select>
-              <input ref={dueRef} type="date" id="due" name="due" value={editedItem.due} onChange={handleInputChange} />
+              <input ref={dueRef} type="date" name="due" id="due" value={editedItem.due} onChange={handleInputChange} />
             </div>
           </div>
         </form>
