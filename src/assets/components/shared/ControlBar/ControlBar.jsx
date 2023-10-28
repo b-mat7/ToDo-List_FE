@@ -34,7 +34,7 @@ const ControlBar = ({ toDos }) => {
     setSearchTerm(searchValue)
 
     if (searchValue) {
-      const filtered = [...toDos].filter(item => item.name.toLowerCase().includes(searchValue.toLowerCase()))
+      const filtered = [...toDos].filter(item => item.name.toLowerCase().includes(searchValue.toLowerCase()) || item.note.toLowerCase().includes(searchValue.toLowerCase()))
       setPostSearchTodos(filtered)
       setIsSearchActive(true)
     } else {
@@ -132,7 +132,7 @@ const ControlBar = ({ toDos }) => {
       </div>
       <ToDosContainer filteredToDos={filteredToDos} /> */}
     </section>
-    
+
     </>
   );
 }
