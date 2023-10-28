@@ -32,16 +32,16 @@ const ToDosContainer = ({ filteredToDos }) => {
         <button onClick={() => setSortBy("dueAsc")}>Fällig</button>
       </div> */}
       <div className={styles.itemContainer}>
-        <div className={styles.active}>
-          {sortedActiveToDos.map((item) => (
+      <div className={styles.inactive}>
+          {sortedInactiveToDos.map((item) => (
             <ToDoItem
               key={item._id}
               item={item}
             />
           ))}
         </div>
-        <div className={styles.inactive}>
-          {sortedInactiveToDos.map((item) => (
+        <div className={styles.active}>
+          {sortedActiveToDos.map((item) => (
             <ToDoItem
               key={item._id}
               item={item}

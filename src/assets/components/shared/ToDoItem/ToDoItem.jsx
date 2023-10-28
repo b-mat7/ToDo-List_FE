@@ -121,7 +121,6 @@ const ToDoItem = ({ item }) => {
       {editMode ?
 
         <form onSubmit={editItem} className={styles.editView}>
-          <button type="submit" className={styles.editSaveBtn}>Save</button>
           <div className={styles.editView_container}>
             <div className={styles.editView_line1}>
               <input ref={nameRef} type="text" name="name" id="name" value={editedItem.name} onChange={handleInputChange} required />
@@ -151,13 +150,16 @@ const ToDoItem = ({ item }) => {
               <input ref={dueRef} type="date" name="due" id="due" value={editedItem.due} onChange={handleInputChange} />
             </div>
           </div>
+          <button type="submit" className={styles.editSaveBtn}>Save</button>
         </form>
 
         :
 
-        <div className={`${styles.displayView} ${item.active === true ? styles.active : styles.inactive}`}>
-          {item.active === true &&
-            <button onClick={() => setEditMode(prev => !prev)} className={styles.editSaveBtn}>Edit</button>
+        // <div className={`${styles.displayView} ${item.active === true ? styles.active : styles.inactive}`}>
+        <div className={styles.displayView}>
+
+          {item.active === false &&
+            <button onClick={deleteItem} className={styles.deleteBtn}>Del</button>
           }
 
           <div onClick={editItemStatus} className={styles.displayView_container}>
@@ -181,8 +183,8 @@ const ToDoItem = ({ item }) => {
             </div>
           </div>
 
-          {item.active === false &&
-            <button onClick={deleteItem} className={styles.deleteBtn}>Del</button>
+          {item.active === true &&
+            <button onClick={() => setEditMode(prev => !prev)} className={styles.editSaveBtn}>Edit</button>
           }
         </div>
       }

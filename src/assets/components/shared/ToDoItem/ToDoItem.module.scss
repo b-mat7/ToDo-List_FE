@@ -30,13 +30,23 @@
 
     .editView_container {
       width: 100%;
-      padding: 0.1rem 0.1rem 0.1rem 0.2rem;
+      padding: 0.1rem 0.2rem 0.1rem 0.1rem;
+
+      display: flex;
+      flex-direction: column;
+      row-gap: 1px;
 
       .editView_line1,
+      .editView_line2,
       .editView_line3,
       .editView_line4 {
         display: flex;
         justify-content: space-between;
+
+        input,
+        select {
+          height: 20px;
+        }
       }
   
       .editView_line1 input:nth-of-type(1) {
@@ -51,6 +61,9 @@
       .editView_line3 select:nth-of-type(1) {
         width: 58px;
       }
+      .editView_line4 select:nth-of-type(1) {
+        width: 33px;
+      }
     }
   }
 
@@ -62,6 +75,7 @@
       padding: 0.1rem 0.25rem;
 
       .displayView_line1,
+      .displayView_line2,
       .displayView_line3,
       .displayView_line4 {
         display: flex;
@@ -73,13 +87,4 @@
       }
     }
   }
-}
-
-.active {
-  justify-content: flex-start;
-}
-
-.inactive {
-  justify-content: space-between;
-  padding-left: 0.5rem;
 }
