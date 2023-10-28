@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from 'react'
-
-import AddItemForm from "../../shared/AddItemForm/AddItemForm";
-import ControlBar from "../../shared/ControlBar/ControlBar";
+import AddItemForm from '../../shared/AddItemForm/AddItemForm';
+import ControlBar from '../../shared/ControlBar/ControlBar';
+import styles from './Home.module.scss';
 
 export const RefreshContext = createContext()
 

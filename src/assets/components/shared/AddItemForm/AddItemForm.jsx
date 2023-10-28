@@ -53,8 +53,8 @@ const AddItemForm = () => {
         nameRef.current.value = ""
         qtyRef.current.value = ""
         noteRef.current.value = ""
-        typeRef.current.value = "einkauf"
-        sourceRef.current.value = "su-markt"
+        typeRef.current.value = "Einkauf"
+        sourceRef.current.value = "Su-Markt"
         ownerRef.current.value = ""
         dueRef.current.value = ""
         setFormVisibility(prev => !prev)
@@ -76,19 +76,19 @@ const AddItemForm = () => {
             <input ref={qtyRef} type="text" name="qty" id="qty" placeholder="Menge" />
             <input ref={noteRef} type="text" name="note" id="note" placeholder="Info" />
             <select ref={typeRef} name="type" id="type">
-              <option value="einkauf">Einkauf</option>
-              <option value="todo">ToDo</option>
+              <option value="Einkauf">Einkauf</option>
+              <option value="Todo">Todo</option>
             </select>
             <select ref={sourceRef} name="source" id="source">
-              <option value="su-markt">Su-Markt</option>
-              <option value="apotheke">Apotheke</option>
-              <option value="drogerie">Drogerie</option>
+              <option value="Su-Markt">Su-Markt</option>
+              <option value="Apotheke">Apotheke</option>
+              <option value="Drogerie">Drogerie</option>
               <option value="s.Info">s.Info</option>
             </select>
             <select ref={ownerRef} name="owner" id="owner">
               <option value=""></option>
-              <option value="kersi">K</option>
-              <option value="matze">M</option>
+              <option value="Kersi">K</option>
+              <option value="Matze">M</option>
             </select>
             <input ref={dueRef} type="date" name="due" id="due" placeholder="Fällig am"/>
             <button type="submit">Hinzufügen</button>

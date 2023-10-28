@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import ToDosContainer from '../ToDosContainer/TodosContainer';
-
 import styles from './ControlBar.module.scss'
 
 const ControlBar = ({ toDos }) => {
@@ -97,41 +96,39 @@ const ControlBar = ({ toDos }) => {
 
   return (
     <>
-          {isSearchActive
+      {isSearchActive
         ? <ToDosContainer filteredToDos={postSearchTodos} />
         : <ToDosContainer filteredToDos={postFilterBtnTodos} />
       }
 
-    <section className={styles.controlbar}>
-
-      <div className={styles.controlPanel}>
-        <div className={styles.search_container}>
-          <input
-            onChange={handleSearch}
-            type="text"
-            name="search"
-            id="search"
-            className={styles.search_input} placeholder="Suche"
-            value={searchTerm} />
-
-          {searchTerm && <button onClick={clearSearch} className={styles.search_clear}>X</button>}
+      <section className={styles.controlbar}>
+        <div className={styles.controlPanel}>
+          <div className={styles.search_container}>
+            <input
+              onChange={handleSearch}
+              type="text"
+              name="search"
+              id="search"
+              className={styles.search_input} placeholder="Suche"
+              value={searchTerm} />
+            {searchTerm && <button onClick={clearSearch} className={styles.search_clear}>X</button>}
+          </div>
+          <div className={styles.filter_container}>
+            <select value={filterBtn} onChange={(event) => handleFilterBtn(event.target.value)}>
+              <option value="">Ort</option>
+              <option value="su-markt">Su-M</option>
+              <option value="apotheke">Apo</option>
+              <option value="drogerie">Drog</option>
+              <option value="s.Info">Info</option>
+            </select>
+            <button onClick={(event) => handleFilterBtn("")}>Reset</button>
+          </div>
         </div>
-        <div className={styles.filter_container}>
-          <select value={filterBtn} onChange={(event) => handleFilterBtn(event.target.value)}>
-            <option value="">Ort</option>
-            <option value="su-markt">Su-M</option>
-            <option value="apotheke">Apo</option>
-            <option value="drogerie">Drog</option>
-            <option value="s.Info">Info</option>
-          </select>
-          <button onClick={(event) => handleFilterBtn("")}>Reset</button>
-        </div>
-      </div>
-      {/* <div>
+        {/* <div>
         <button onClick={filterByType}>Type</button>
       </div>
       <ToDosContainer filteredToDos={filteredToDos} /> */}
-    </section>
+      </section>
 
     </>
   );
