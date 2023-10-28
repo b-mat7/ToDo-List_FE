@@ -96,12 +96,13 @@ const ControlBar = ({ toDos }) => {
   // }
 
   return (
-    <section className={styles.controlbar}>
-
-      {isSearchActive
+    <>
+          {isSearchActive
         ? <ToDosContainer filteredToDos={postSearchTodos} />
         : <ToDosContainer filteredToDos={postFilterBtnTodos} />
       }
+
+    <section className={styles.controlbar}>
 
       <div className={styles.controlPanel}>
         <div className={styles.search_container}>
@@ -131,6 +132,8 @@ const ControlBar = ({ toDos }) => {
       </div>
       <ToDosContainer filteredToDos={filteredToDos} /> */}
     </section>
+    
+    </>
   );
 }
 

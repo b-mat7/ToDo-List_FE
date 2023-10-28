@@ -5,12 +5,12 @@
   bottom: 0;
   width: 100%;
 
+  background-color: var.$color_root_background;
+
   .controlPanel {
     display: flex;
     justify-content: space-between;
     padding: 1.25rem 1rem;
-
-    background-color: var.$color_root_background;
 
     .search_container {
       position: relative;
