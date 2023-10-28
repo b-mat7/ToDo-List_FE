@@ -87,8 +87,8 @@ const AddItemForm = () => {
             </select>
             <select ref={ownerRef} name="owner" id="owner">
               <option value=""></option>
-              <option value="Kersi">K</option>
-              <option value="Matze">M</option>
+              <option value="Kersi">Kersi</option>
+              <option value="Matze">Matze</option>
             </select>
             <input ref={dueRef} type="date" name="due" id="due" placeholder="Fällig am"/>
             <button type="submit">Hinzufügen</button>

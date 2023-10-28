@@ -131,21 +131,21 @@ const ToDoItem = ({ item }) => {
             </div>
             <div className={styles.editView_line3}>
               <select ref={typeRef} name="type" id="type" value={editedItem.type} onChange={handleInputChange}>
-                <option value="einkauf">Einkauf</option>
-                <option value="todo">ToDo</option>
+                <option value="Einkauf">Einkauf</option>
+                <option value="Todo">ToDo</option>
               </select>
               <select ref={sourceRef} name="source" id="source" value={editedItem.source} onChange={handleInputChange}>
-                <option value="su-markt">Su-Markt</option>
-                <option value="apotheke">Apotheke</option>
-                <option value="drogerie">Drogerie</option>
+                <option value="Su-Markt">Su-Markt</option>
+                <option value="Apotheke">Apotheke</option>
+                <option value="Drogerie">Drogerie</option>
                 <option value="s.Info">s.Info</option>
               </select>
             </div>
             <div className={styles.editView_line4}>
               <select ref={ownerRef} name="owner" id="owner" value={editedItem.owner} onChange={handleInputChange}>
                 <option value=""></option>
-                <option value="kersi">K</option>
-                <option value="matze">M</option>
+                <option value="Kersi">Kersi</option>
+                <option value="Matze">Matze</option>
               </select>
               <input ref={dueRef} type="date" name="due" id="due" value={editedItem.due} onChange={handleInputChange} />
             </div>
