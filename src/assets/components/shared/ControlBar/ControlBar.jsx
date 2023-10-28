@@ -118,10 +118,10 @@ const ControlBar = ({ toDos }) => {
         <div className={styles.filter_container}>
           <select value={filterBtn} onChange={(event) => handleFilterBtn(event.target.value)}>
             <option value="">Ort</option>
-            <option value="su-markt">Su-Markt</option>
-            <option value="apotheke">Apotheke</option>
-            <option value="drogerie">Drogerie</option>
-            <option value="s.Info">s.Info</option>
+            <option value="su-markt">Su-M</option>
+            <option value="apotheke">Apo</option>
+            <option value="drogerie">Drog</option>
+            <option value="s.Info">Info</option>
           </select>
           <button onClick={(event) => handleFilterBtn("")}>Reset</button>
         </div>

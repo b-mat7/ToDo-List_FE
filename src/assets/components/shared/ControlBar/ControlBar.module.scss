@@ -3,20 +3,21 @@
 .controlbar {
   position: fixed;
   bottom: 0;
+  width: 100%;
 
   .controlPanel {
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 1.25rem 1rem;
 
-    background-color: blue;
+    background-color: var.$color_root_background;
 
     .search_container {
       position: relative;
 
       .search_input {
         text-indent: 0.5rem;
-        max-width: 165px;
+        max-width: 135px;
         border-radius: 5px;
         border: 1px solid var.$color_font_white;
       }
