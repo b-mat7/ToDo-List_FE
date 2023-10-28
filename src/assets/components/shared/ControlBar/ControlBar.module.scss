@@ -1,11 +1,15 @@
 @use "../../../styles/variables.module" as var;
 
 .controlbar {
+  position: fixed;
+  bottom: 0;
 
   .controlPanel {
     display: flex;
     justify-content: space-between;
     padding: 1rem;
+
+    background-color: blue;
 
     .search_container {
       position: relative;

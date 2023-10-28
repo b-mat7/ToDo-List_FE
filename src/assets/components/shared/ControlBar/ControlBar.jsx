@@ -97,6 +97,12 @@ const ControlBar = ({ toDos }) => {
 
   return (
     <section className={styles.controlbar}>
+
+      {isSearchActive
+        ? <ToDosContainer filteredToDos={postSearchTodos} />
+        : <ToDosContainer filteredToDos={postFilterBtnTodos} />
+      }
+
       <div className={styles.controlPanel}>
         <div className={styles.search_container}>
           <input
@@ -124,11 +130,6 @@ const ControlBar = ({ toDos }) => {
         <button onClick={filterByType}>Type</button>
       </div>
       <ToDosContainer filteredToDos={filteredToDos} /> */}
-
-      {isSearchActive
-        ? <ToDosContainer filteredToDos={postSearchTodos} />
-        : <ToDosContainer filteredToDos={postFilterBtnTodos} />
-      }
     </section>
   );
 }
