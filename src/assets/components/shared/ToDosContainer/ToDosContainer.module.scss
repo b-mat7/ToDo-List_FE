@@ -4,12 +4,11 @@
   min-width: 375px;
   padding: 1rem;
 
+  height: calc(100dvh - 66px); // to let it start above controlbar
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
-  // damit oberhalb der controlbar startet
-  height: calc(100dvh - 66px); 
 
   .item_container {
     display: flex;

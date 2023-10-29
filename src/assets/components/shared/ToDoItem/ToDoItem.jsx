@@ -155,8 +155,7 @@ const ToDoItem = ({ item }) => {
 
         :
 
-        // <div className={`${styles.displayView} ${item.active === true ? styles.active : styles.inactive}`}>
-        <div className={styles.displayView}>
+        <div className={`${styles.displayView} ${item.active === true ? styles.active : styles.inactive}`}>
 
           {item.active === false &&
             <button onClick={deleteItem} className={styles.deleteBtn}>Del</button>

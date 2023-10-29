@@ -54,7 +54,7 @@ const ControlBar = ({ toDos }) => {
   useEffect(() => {
     setPostFilterBtnTodos(toDos)
     if (isFilterBtnActive) {
-      const filtered = [...toDos].filter(item => item.source === filterBtn)
+      // const filtered = [...toDos].filter(item => item.source === filterBtn || item.owner === filterBtn || item.type === filterBtn)
       setPostFilterBtnTodos(filtered)
     }
   }, [toDos]) // isFilterBtnActive needed ?
@@ -66,7 +66,7 @@ const ControlBar = ({ toDos }) => {
       setIsFilterBtnActive(false)
     } else {
       setFilterBtn(filterType)
-      const filtered = [...toDos].filter(item => item.source === filterType)
+      // const filtered = [...toDos].filter(item => item.source === filterType || item.owner === filterType || item.type === filterType)
       setPostFilterBtnTodos(filtered)
       setIsFilterBtnActive(true)
     }
@@ -115,11 +115,15 @@ const ControlBar = ({ toDos }) => {
           </div>
           <div className={styles.filter_container}>
             <select value={filterBtn} onChange={(event) => handleFilterBtn(event.target.value)}>
-              <option value="">Wo?</option>
-              <option value="Su-markt">Su-M</option>
+              <option value="">Filter</option>
+              <option value="Su-Markt">Su-M</option>
               <option value="Apotheke">Apo</option>
               <option value="Drogerie">Drog</option>
               <option value="s.Info">Info</option>
+              <option value="Kersi">Kersi</option>
+              <option value="Matze">Matze</option>
+              <option value="Einkauf">Einkauf</option>
+              <option value="Todo">Todo</option>
             </select>
             <button onClick={(event) => handleFilterBtn("")}>Reset</button>
           </div>
