@@ -54,7 +54,7 @@ const ControlBar = ({ toDos }) => {
   useEffect(() => {
     setPostFilterBtnTodos(toDos)
     if (isFilterBtnActive) {
-      // const filtered = [...toDos].filter(item => item.source === filterBtn || item.owner === filterBtn || item.type === filterBtn)
+      const filtered = [...toDos].filter(item => item.source === filterBtn || item.owner === filterBtn || item.type === filterBtn)
       setPostFilterBtnTodos(filtered)
     }
   }, [toDos]) // isFilterBtnActive needed ?
@@ -66,7 +66,7 @@ const ControlBar = ({ toDos }) => {
       setIsFilterBtnActive(false)
     } else {
       setFilterBtn(filterType)
-      // const filtered = [...toDos].filter(item => item.source === filterType || item.owner === filterType || item.type === filterType)
+      const filtered = [...toDos].filter(item => item.source === filterType || item.owner === filterType || item.type === filterType)
       setPostFilterBtnTodos(filtered)
       setIsFilterBtnActive(true)
     }
