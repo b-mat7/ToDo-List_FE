@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import ToDoItem from '../ToDoItem/ToDoItem';
 import SortByName from '../SortByButton/SortByName';
 import SortByEdited from '../SortByButton/SortByEdited';
+import SortByDue from '../SortByButton/SortByDue';
 import styles from './ToDosContainer.module.scss'
 
 const ToDosContainer = ({ filteredToDos }) => {
@@ -62,7 +63,10 @@ const ToDosContainer = ({ filteredToDos }) => {
           sortBy={sortBy}
           setSortBy={setSortBy}
         />
-
+        <SortByDue
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+        />
       </div>
     </section>
   );

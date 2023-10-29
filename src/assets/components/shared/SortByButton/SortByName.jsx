@@ -19,9 +19,9 @@ const SortByName = ({ sortBy, setSortBy }) => {
   return (
     <>
       {sortBy === "nameDes"
-        ? <button className={styles.active} onClick={changeSorting}>N-Des</button>
+        ? <button className={styles.active} onClick={changeSorting}>Name(d)</button>
         : sortBy === "nameAsc"
-          ? <button className={styles.active} onClick={changeSorting}>N-Asc</button>
+          ? <button className={styles.active} onClick={changeSorting}>Name(a)</button>
           : <button onClick={changeSorting}>Name</button>
       }
     </>

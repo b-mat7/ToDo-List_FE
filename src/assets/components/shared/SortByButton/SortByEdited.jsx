@@ -22,7 +22,7 @@ const SortByEdited = ({ sortBy, setSortBy }) => {
         ? <button className={styles.active} onClick={changeSorting}>Bearbeitet(d)</button>
         : sortBy === "editedAsc"
           ? <button className={styles.active} onClick={changeSorting}>Bearbeitet(a)</button>
-          : <button onClick={changeSorting}>Edited</button>
+          : <button onClick={changeSorting}>Bearbeitet</button>
       }
     </>
   );
