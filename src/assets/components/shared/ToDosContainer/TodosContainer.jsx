@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import ToDoItem from '../ToDoItem/ToDoItem';
-import styles from './ToDosContainer.module.scss'
-
 import SortByName from '../SortByButton/SortByName';
+import SortByEdited from '../SortByButton/SortByEdited';
+import styles from './ToDosContainer.module.scss'
 
 const ToDosContainer = ({ filteredToDos }) => {
   const [sortBy, setSortBy] = useState("editedDes")
@@ -54,11 +54,11 @@ const ToDosContainer = ({ filteredToDos }) => {
         </div>
       </div>
       <div className={styles.sortByPanel}>
-        <button onClick={() => setSortBy("nameAsc")}>Name</button>
-        <button onClick={() => setSortBy("editedAsc")}>Bearbeitet</button>
-        <button onClick={() => setSortBy("dueAsc")}>Fällig</button>
-
         <SortByName
+          sortBy={sortBy}
+          setSortBy={setSortBy}
+        />
+        <SortByEdited
           sortBy={sortBy}
           setSortBy={setSortBy}
         />
