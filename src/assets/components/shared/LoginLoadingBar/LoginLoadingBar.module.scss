@@ -1,0 +1,24 @@
+@use "../../../styles/variables.module" as var;
+
+.loading_bar_container {
+  height: 4px;
+  width: 100%;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  background: transparent;
+  overflow-x: hidden;
+}
+
+.loading_bar {
+  height: 100%;
+  width: 0;
+  background-color: #4caf50;
+  border-radius: 10px;
+  transition: width 25s ease-in-out;
+}
+
+.loading_message {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: var.$color_font_white;
+}
