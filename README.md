@@ -8,17 +8,6 @@ Home: refresh -> muss über /Login ?
 
 "aktives" Logout (not on refresh)
 
-# SortBy Btns ===============
-- Active Btn Group:
-NAME - EDITED - DUE
-mit state: [active] -> welcher grade gedrückt
-
-- Btns selbst:
-state [0, 1, 2] (Asc, Des, Deactivated)
---> triggert useEffect()
-  - sort!
-  - apply styling class
-
 
 # styling ===============
 Login: LodingState + -animation (Loadingbalken)
