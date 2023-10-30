@@ -1,11 +1,11 @@
 @use "../../../styles/variables.module" as var;
 
-.controlbar {
+.control_bar {
   position: fixed;
   bottom: 0;
   width: 100%;
 
-  .controlPanel {
+  .control_panel {
     display: flex;
     justify-content: space-between;
     padding: 1.25rem 1rem;
@@ -13,9 +13,25 @@
     .search_container {
       position: relative;
 
+      .logout_btn {
+        width: 26px;
+        height: 26px;
+        background-color: red;
+        border: 1px solid var.$color_font_white;
+        border-radius: 5px;
+        color: var.$color_font_white;
+
+        margin-right: 0.75rem;
+
+        svg {
+          display: inline-block;
+          vertical-align: baseline;
+        }
+      }
+
       .search_input {
         text-indent: 0.5rem;
-        max-width: 138px;
+        max-width: 100px;
         border-radius: 5px;
         border: 1px solid var.$color_font_white;
       }
