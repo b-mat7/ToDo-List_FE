@@ -68,15 +68,15 @@ const Login = () => {
           placeholder='Passphrase' />
         <button onClick={handleLogin}>Login</button>
       </div>
-      <div className={styles.err_container}>
+      <div className={styles.animation_container}>
+        {isLoading &&
+          <>
+            <LoginLoadingBar />
+            <LoginLoadingMessage />
+          </>
+        }
         {err && <p>{err}</p>}
       </div>
-      {isLoading &&
-        <>
-          <LoginLoadingBar />
-          <LoginLoadingMessage />
-        </>
-      }
     </section>
   );
 }

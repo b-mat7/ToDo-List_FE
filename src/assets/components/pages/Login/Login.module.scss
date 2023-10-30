@@ -23,9 +23,11 @@
     }
   }
 
-  .err_container {
-    height: 1.5rem; // prevents moving input on err
-    padding: 1rem 0 1rem 2rem;
-    color: red;
+  .animation_container {
+    min-height: 1.5rem; // prevents moving input on err
+    padding: 1rem 0rem;
+    // color: red;
+    text-align: center;
+    background-color: blue;
   }
 }
