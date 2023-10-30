@@ -120,9 +120,9 @@ const ControlBar = ({ toDos }) => {
               <option value="Apotheke">Apo</option>
               <option value="Drogerie">Drog</option>
               <option value="s.Info">Info</option>
-              <option value="Kersi">Kersi</option>
-              <option value="Matze">Matze</option>
-              <option value="Einkauf">Einkauf</option>
+              <option value="KB">KB</option>
+              <option value="MB">MB</option>
+              <option value="Kauf">Kauf</option>
               <option value="Todo">Todo</option>
             </select>
             <button onClick={(event) => handleFilterBtn("")}>Reset</button>

@@ -53,7 +53,7 @@ const AddItemForm = () => {
         nameRef.current.value = ""
         qtyRef.current.value = ""
         noteRef.current.value = ""
-        typeRef.current.value = "Einkauf"
+        typeRef.current.value = "Kauf"
         sourceRef.current.value = "Su-Markt"
         ownerRef.current.value = ""
         dueRef.current.value = ""
@@ -76,7 +76,7 @@ const AddItemForm = () => {
             <input ref={qtyRef} type="text" name="qty" id="qty" placeholder="Menge" />
             <input ref={noteRef} type="text" name="note" id="note" placeholder="Info" />
             <select ref={typeRef} name="type" id="type">
-              <option value="Einkauf">Einkauf</option>
+              <option value="Kauf">Kauf</option>
               <option value="Todo">Todo</option>
             </select>
             <select ref={sourceRef} name="source" id="source">
@@ -87,8 +87,8 @@ const AddItemForm = () => {
             </select>
             <select ref={ownerRef} name="owner" id="owner">
               <option value=""></option>
-              <option value="Kersi">Kersi</option>
-              <option value="Matze">Matze</option>
+              <option value="KB">KB</option>
+              <option value="MB">MB</option>
             </select>
             <input ref={dueRef} type="date" name="due" id="due" placeholder="Fällig am" />
             <button type="submit">Hinzufügen</button>
