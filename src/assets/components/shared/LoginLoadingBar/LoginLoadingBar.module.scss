@@ -3,9 +3,7 @@
 .loading_bar_container {
   height: 4px;
   width: 100%;
-  background-color: #f1f1f1;
   border-radius: 10px;
-  background: transparent;
   overflow-x: hidden;
 }
 
@@ -18,7 +16,12 @@
 }
 
 .loading_message {
-  margin-top: 10px;
-  font-size: 1rem;
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  margin-top: 0.5rem;
   color: var.$color_font_white;
+  animation: blink 2s infinite;
 }

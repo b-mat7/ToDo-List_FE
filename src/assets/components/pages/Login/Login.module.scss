@@ -24,10 +24,19 @@
   }
 
   .animation_container {
-    min-height: 1.5rem; // prevents moving input on err
-    padding: 1rem 0rem;
-    // color: red;
+    height: 4rem; // prevents moving input when no content
+    padding: 1rem 0rem 0rem 0rem;
     text-align: center;
-    background-color: blue;
+
+    .err_msg {
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+
+      margin-top: 1.5rem;
+      color: red;
+      animation: blink 2s infinite;
+    }
   }
 }

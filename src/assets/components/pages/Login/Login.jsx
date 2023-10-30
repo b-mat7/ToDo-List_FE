@@ -75,7 +75,7 @@ const Login = () => {
             <LoginLoadingMessage />
           </>
         }
-        {err && <p>{err}</p>}
+        {err && <p className={styles.err_msg}>{err}</p>}
       </div>
     </section>
   );

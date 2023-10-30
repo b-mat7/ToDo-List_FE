@@ -8,10 +8,10 @@ const LoginLoadingMessage = () => {
   const messages = [
     "Sending request...",
     "Establishing connection...",
-    "Starting Server...",
-    "Trying to log in...",
+    "Waiting for Server response...",
+    "Attempting log in...",
   ];
-  const durations = [3000, 5000, 6000, 6000];
+  const durations = [3000, 4000, 7000, 6000];
 
   const onComplete = () => {
     if (currentMessage < messages.length - 1) {
