@@ -3,7 +3,7 @@ import styles from './LoginLoadingBar.module.scss'
 
 
 const LoginLoadingBar = ({ message, duration, onComplete }) => {
-  const [percentage, setPercentage] = useState(0.5);
+  const [percentage, setPercentage] = useState(0);
   const intervalTime = 100; // Interval time in milliseconds
   
   useEffect(() => {

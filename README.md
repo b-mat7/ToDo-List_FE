@@ -1,19 +1,21 @@
+Login animation check
+SortBtns Abstand unten
+Searchfield Größe
+
 # open / to check Christian =========
 Search + Filter states zusammenführen
-
-user-Mgmt: DB conn geht zu jew collection...
 
 Home: refresh -> muss über /Login ? 
               -> LoadingState?
 
 "aktives" Logout (not on refresh)
 
+user-Mgmt: DB conn geht zu jew collection...
+
 
 # styling ===============
-Login: LodingState + -animation (Loadingbalken)
 Btn onClick eine water drop animation über den button
-Icons (Del, Edit, Add)
-
+Icons (Del, Edit, Add, Asc, Des)
 
 
 # not (render interne setups vs localhost)
@@ -27,9 +29,12 @@ active <-> inactive
 (((listing von unten -> oben scrolling? )))
 Suche auch über info feld
 Su-Markt filter fix
+Login: LodingState + -animation (Loadingbalken)
 
 # FilterBy Btns
 TYP - ORT - OWNER
 state pro btn(false) -onClick-> prev => !prev, class drauf (myIdea)
 oder siehe SortBy Btns (Christian)
+
+# SortBy Btns
 

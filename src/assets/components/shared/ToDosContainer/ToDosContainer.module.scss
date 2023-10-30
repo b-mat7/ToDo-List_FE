@@ -2,7 +2,7 @@
 
 .toDos_container {
   min-width: 375px;
-  padding: 1rem;
+  padding: 1rem 1rem 0rem 1rem;
 
   height: calc(100dvh - 66px); // to let it start above controlbar
 
@@ -29,7 +29,7 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    padding: 1rem 1rem 0rem 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
 
     button {
       padding: 0 0.5rem;
