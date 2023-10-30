@@ -1,7 +1,3 @@
-Login animation check
-SortBtns Abstand unten
-Searchfield Größe
-
 # open / to check Christian =========
 Search + Filter states zusammenführen
 
@@ -10,19 +6,16 @@ Home: refresh -> muss über /Login ?
 
 "aktives" Logout (not on refresh)
 
-user-Mgmt: DB conn geht zu jew collection...
-
+user-Mgmt: DB conn geht zu jew collection so ok / besser...
 
 # styling ===============
 Btn onClick eine water drop animation über den button
-Icons (Del, Edit, Add, Asc, Des)
 
+-----
 
 # not (render interne setups vs localhost)
 kein Logout (cookie kan auf render nicht gelöscht werden)
 Fehleranzeige FE: error.statusText
-
------
 
 Searchbar runter, Additem drübber
 active <-> inactive
