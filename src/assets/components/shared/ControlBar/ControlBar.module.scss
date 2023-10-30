@@ -13,25 +13,25 @@
     .search_container {
       position: relative;
 
-      .logout_btn {
-        width: 26px;
-        height: 26px;
-        background-color: red;
-        border: 1px solid var.$color_font_white;
-        border-radius: 5px;
-        color: var.$color_font_white;
+      // .logout_btn {
+      //   width: 26px;
+      //   height: 26px;
+      //   background-color: red;
+      //   border: 1px solid var.$color_font_white;
+      //   border-radius: 5px;
+      //   color: var.$color_font_white;
 
-        margin-right: 0.75rem;
+      //   margin-right: 0.75rem;
 
-        svg {
-          display: inline-block;
-          vertical-align: baseline;
-        }
-      }
+      //   svg {
+      //     display: inline-block;
+      //     vertical-align: middle;
+      //   }
+      // }
 
       .search_input {
         text-indent: 0.5rem;
-        max-width: 100px;
+        max-width: 138px;
         border-radius: 5px;
         border: 1px solid var.$color_font_white;
       }
