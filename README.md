@@ -11,6 +11,18 @@ user-Mgmt: DB conn geht zu jew collection so ok / besser...
 # styling ===============
 Btn onClick eine water drop animation über den button
 
+Del + Edit btn: border+logo smoke?
+Del item: schrift smoke?
+
+Suche same bg wie andere
+
+AddBtn: wie f2g bg + border
+All btn unten: border wie f2g?
+
+Sortby btn: border + =active pfeil f2g green, =active bg f2g blue?
+
+
+
 -----
 
 # not (render interne setups vs localhost)

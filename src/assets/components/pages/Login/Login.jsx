@@ -41,15 +41,16 @@ const Login = () => {
           "content-type": "application/json"
         },
         credentials: "include",
-        body: JSON.stringify({ passphrase: passRef.current.value })
+        body: JSON.stringify({ passcode: passRef.current.value })
       })
 
       if (response.ok) {
         navigate("/home")
         setIsLoading(false)
       } else {
-        setErr("Wrong passphrase")
+        setErr("Wrong passcode")
         setIsLoading(false)
+        passRef.current.value = ""
       }
     } catch (error) {
       console.error(error.message)
@@ -59,13 +60,13 @@ const Login = () => {
 
   return (
     <section className={styles.login}>
-      <div className={styles.passphrase_container}>
+      <div className={styles.passcode_container}>
         <input
           ref={passRef}
           type="password"
-          name="passphrase"
-          id="passphrase"
-          placeholder='Passphrase' />
+          name="passcode"
+          id="passcode"
+          placeholder='Passcode' />
         <button onClick={handleLogin}>Login</button>
       </div>
       <div className={styles.animation_container}>
