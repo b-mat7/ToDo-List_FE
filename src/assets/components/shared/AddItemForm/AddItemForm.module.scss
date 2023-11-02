@@ -7,7 +7,6 @@
   bottom: 0;
   left: 50%;
   transform: translate(-50%);
-  // box-shadow: 0px -15px 10px 0px rgba(13, 22, 54, 0.05);
 
   .container_form {
     display: flex;
@@ -36,7 +35,7 @@
       button {
         font-weight: 700;
         background-color: green;
-        border: 1px solid var.$color_font_white;
+        border: 1px solid var.$color_font_smoke;
         border-radius: 5px;
         color: var.$color_font_white;
       }
@@ -52,9 +51,8 @@
       min-height: 3rem;
       font-weight: 700;
       background-color: green;
-      border: 1px solid var.$color_font_white;
+      border: 1px solid var.$color_font_smoke;
       border-radius: 8px;
-      color: var.$color_font_white;
 
       display: flex;
       justify-content: center;

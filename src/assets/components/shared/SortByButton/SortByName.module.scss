@@ -1,7 +1,14 @@
 @use "../../../styles/variables.module" as var;
 
+.sort_btn {
+  background-color: var.$color_accent_bluedark;
+  border: 1px solid var.$color_accent_greendark;
+  color: var.$color_font_smoke;
+}
+
 .active {
-  background-color: lightgreen;
+  border: 1px solid var.$color_accent_greenlight;
+  color: var.$color_font_white;
 }
 
 button svg {

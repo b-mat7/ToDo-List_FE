@@ -22,10 +22,10 @@ const SortByEdited = ({ sortBy, setSortBy }) => {
   return (
     <>
       {sortBy === "editedDes"
-        ? <button className={styles.active} onClick={changeSorting}>Bearbeitet <SortDownIcon /></button>
+        ? <button className={`${styles.sort_btn} ${styles.active}`} onClick={changeSorting}>Bearbeitet <SortDownIcon /></button>
         : sortBy === "editedAsc"
-          ? <button className={styles.active} onClick={changeSorting}>Bearbeitet <SortUpIcon /></button>
-          : <button onClick={changeSorting}>Bearbeitet <SortIcon /></button>
+          ? <button className={`${styles.sort_btn} ${styles.active}`} onClick={changeSorting}>Bearbeitet <SortUpIcon /></button>
+          : <button className={styles.sort_btn} onClick={changeSorting}>Bearbeitet <SortIcon /></button>
       }
     </>
   );

@@ -13,13 +13,25 @@
     input {
       text-indent: 0.5rem;
       border-radius: 5px;
-      border: 1px solid var.$color_font_white;
+
+      background-color: var.$color_accent_bluedark;
+      border: 1px solid var.$color_accent_greendark;
+      color: var.$color_font_smoke;
     }
+
+    input:focus {
+      border: 1px solid var.$color_accent_greenlight;
+      outline: none;
+    }
+
 
     button {
       padding: 0 0.5rem;
       border-radius: 5px;
-      border: 1px solid var.$color_font_white;
+
+      background-color: var.$color_accent_bluedark;
+      border: 1px solid var.$color_accent_greendark;
+      color: var.$color_font_smoke;
     }
   }
 

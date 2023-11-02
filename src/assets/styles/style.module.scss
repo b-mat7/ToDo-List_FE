@@ -19,4 +19,7 @@
 main {
   width: 100%;
   min-height: 100dvh;
+
+  max-width: var.$breakpoint_xs;
+  margin: 0 auto;
 }

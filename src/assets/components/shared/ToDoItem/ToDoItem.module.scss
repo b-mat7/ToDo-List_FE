@@ -2,19 +2,18 @@
 
 .todo_item {
   font-size: 0.65rem;
-  color: var.$color_font_background;
-  background-color: lightgray;
-  border: 1px solid var.$color_font_white;
-  border-radius: 8px;
+  // background-color: lightgray;
+  // color: var.$color_root_background;
+  // border: 1px solid var.$color_font_white;
 
   .editSave_btn {
     min-width: 32px;
     min-height: 34px;
     font-weight: 700;
-    background-color: green;
-    border: 1px solid var.$color_font_white;
-    border-radius: 8px;
     color: var.$color_font_white;
+    background-color: green;
+    border: 1px solid var.$color_font_smoke;
+    border-radius: 8px;
 
     display: flex;
     justify-content: center;
@@ -26,9 +25,8 @@
     min-height: 34px;
     font-weight: 700;
     background-color: red;
-    border: 1px solid var.$color_font_white;
+    border: 1px solid var.$color_font_smoke;
     border-radius: 8px;
-    color: var.$color_font_white;
 
     display: flex;
     justify-content: center;
@@ -46,6 +44,10 @@
       flex-direction: column;
       row-gap: 1px;
 
+      background-color: var.$color_accent_bluelight;
+      border: 1px solid var.$color_accent_greendark;
+      border-radius: 8px;
+
       .editView_line1,
       .editView_line2,
       .editView_line3,
@@ -56,6 +58,8 @@
         input,
         select {
           height: 20px;
+          border-radius: 5px;
+          text-indent: 0.15rem;
         }
       }
   
@@ -69,13 +73,13 @@
         width: 100%;
       }
       .editView_line3 select:nth-of-type(1) {
-        width: 45px;
+        width: 53px;
       }
       .editView_line3 select:nth-of-type(2) {
         width: 95px;
       }
       .editView_line4 select:nth-of-type(1) {
-        width: 45px;
+        width: 53px;
       }
       .editView_line4 select:nth-of-type(2) {
         width: 95px;
@@ -105,10 +109,16 @@
   }
 
   .active {
-
+    border-radius: 8px;
+    background-color: var.$color_accent_bluelight;
+    border: 1px solid var.$color_accent_greendark;
+    color: var.$color_font_white;
   }
 
   .inactive {
-
+    border-radius: 8px;
+    background-color: var.$color_accent_bluelight;
+    border: 1px solid var.$color_accent_greendark;
+    color: var.$color_font_white;
   }
 }

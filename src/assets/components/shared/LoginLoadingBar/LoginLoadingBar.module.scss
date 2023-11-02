@@ -10,7 +10,7 @@
 .loading_bar {
   height: 100%;
   width: 0;
-  background-color: #4caf50;
+  background-color: var.$color_accent_greenlight;
   border-radius: 10px;
   transition: width 25s ease-in-out;
 }

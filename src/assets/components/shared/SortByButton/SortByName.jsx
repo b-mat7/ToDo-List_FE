@@ -22,10 +22,10 @@ const SortByName = ({ sortBy, setSortBy }) => {
   return (
     <>
       {sortBy === "nameDes"
-        ? <button className={styles.active} onClick={changeSorting}>Name <SortDownIcon /></button>
+        ? <button className={`${styles.sort_btn} ${styles.active}`} onClick={changeSorting}>Name <SortDownIcon /></button>
         : sortBy === "nameAsc"
-          ? <button className={styles.active} onClick={changeSorting}>Name <SortUpIcon /></button>
-          : <button onClick={changeSorting}>Name <SortIcon /></button>
+          ? <button className={`${styles.sort_btn} ${styles.active}`} onClick={changeSorting}>Name <SortUpIcon /></button>
+          : <button className={styles.sort_btn} onClick={changeSorting}>Name <SortIcon /></button>
       }
     </>
   );

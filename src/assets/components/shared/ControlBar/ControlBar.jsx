@@ -133,7 +133,7 @@ const ControlBar = ({ toDos }) => {
             {searchTerm && <button onClick={clearSearch} className={styles.search_clear}>X</button>}
           </div>
           <div className={styles.filter_container}>
-            <select value={filterBtn} onChange={(event) => handleFilterBtn(event.target.value)}>
+            <select className={`${isFilterBtnActive ? styles.isSelected : null}`} value={filterBtn} onChange={(event) => handleFilterBtn(event.target.value)}>
               <option value="">Filter</option>
               <option value="Su-Markt">Su-M</option>
               <option value="Apotheke">Apo</option>
@@ -153,7 +153,6 @@ const ControlBar = ({ toDos }) => {
       </div>
       <ToDosContainer filteredToDos={filteredToDos} /> */}
       </section>
-
     </>
   );
 }

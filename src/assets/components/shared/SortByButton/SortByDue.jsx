@@ -22,10 +22,10 @@ const SortByDue = ({ sortBy, setSortBy }) => {
   return (
     <>
       {sortBy === "dueDes"
-        ? <button className={styles.active} onClick={changeSorting}>Fällig <SortDownIcon /></button>
+        ? <button className={`${styles.sort_btn} ${styles.active}`} onClick={changeSorting}>Fällig <SortDownIcon /></button>
         : sortBy === "dueAsc"
-          ? <button className={styles.active} onClick={changeSorting}>Fällig <SortUpIcon /></button>
-          : <button onClick={changeSorting}>Fällig <SortIcon /></button>
+          ? <button className={`${styles.sort_btn} ${styles.active}`} onClick={changeSorting}>Fällig <SortUpIcon /></button>
+          : <button className={styles.sort_btn} onClick={changeSorting}>Fällig <SortIcon /></button>
       }
     </>
   );
