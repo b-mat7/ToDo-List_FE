@@ -59,32 +59,32 @@
         select {
           height: 20px;
           border-radius: 5px;
-          text-indent: 0.15rem;
         }
       }
   
       .editView_line1 input:nth-of-type(1) {
         width: 100%;
+        text-indent: 0.15rem;
       }
       .editView_line1 input:nth-of-type(2) {
         width: 35px;
+        text-indent: 0.15rem;
       }
       .editView_line2 input {
         width: 100%;
+        text-indent: 0.15rem;
       }
       .editView_line3 select:nth-of-type(1) {
-        text-indent: 0;
-        width: 50px;
+        width: 47px;
       }
       .editView_line3 select:nth-of-type(2) {
-        width: 100%;
+        width: 80px;
       }
       .editView_line4 select:nth-of-type(1) {
-        text-indent: 0;
         width: 33px;
       }
       .editView_line4 select:nth-of-type(2) {
-        width: 80px;
+        width: 94px;
       }
     }
   }

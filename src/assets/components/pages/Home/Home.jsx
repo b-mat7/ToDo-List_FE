@@ -35,10 +35,12 @@ const Home = () => {
     <section>
       <RefreshContext.Provider value={{ refresh, setRefresh }}>
         {err
-          ? <p style={{ color: 'red' }}>{err}</p>
-          : <ControlBar toDos={toDos} />
+          ? <p style={{ color: 'red', position: "absolute", top: "40%", left: "45%", transform: "translate(-40%, -50%" }}>{err}</p>
+          : <>
+            <ControlBar toDos={toDos} />
+            <AddItemForm />
+          </>
         }
-        <AddItemForm />
       </RefreshContext.Provider>
     </section>
   );

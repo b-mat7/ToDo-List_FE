@@ -70,13 +70,13 @@ const Login = () => {
         <button onClick={handleLogin}>Login</button>
       </div>
       <div className={styles.animation_container}>
-        {isLoading &&
+        {isLoading
+          ?
           <>
             <LoginLoadingBar />
             <LoginLoadingMessage />
           </>
-        }
-        {err && <p className={styles.err_msg}>{err}</p>}
+          : <p className={styles.err_msg}>{err}</p>}
       </div>
     </section>
   );
